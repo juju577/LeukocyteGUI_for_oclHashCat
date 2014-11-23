@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CapToHccapConverterGUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="capConverter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">aircrack-ng.exe</Value>
+    </Setting>
+    <Setting Name="hccapOutputPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hccap/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
