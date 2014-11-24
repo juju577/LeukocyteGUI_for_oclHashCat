@@ -33,16 +33,18 @@
             this.buttonConvert = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chooseConverterDialog = new System.Windows.Forms.OpenFileDialog();
+            this.chooseFilesDialog = new System.Windows.Forms.OpenFileDialog();
             this.chooseOutputDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.listBoxFilenames = new System.Windows.Forms.ListBox();
+            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.textBoxConverter = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
             this.buttonMoveUp = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChooseOutput = new System.Windows.Forms.Button();
             this.buttonChooseConverter = new System.Windows.Forms.Button();
-            this.textBoxOutput = new System.Windows.Forms.TextBox();
-            this.textBoxConverter = new System.Windows.Forms.TextBox();
+            this.chooseConverterDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // labelFilesToConvert
@@ -67,11 +69,11 @@
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // chooseConverterDialog
+            // chooseFilesDialog
             // 
-            this.chooseConverterDialog.FileName = "aircrack-ng.exe";
-            resources.ApplyResources(this.chooseConverterDialog, "chooseConverterDialog");
-            this.chooseConverterDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.chooseConverterDialog_FileOk);
+            resources.ApplyResources(this.chooseFilesDialog, "chooseFilesDialog");
+            this.chooseFilesDialog.Multiselect = true;
+            this.chooseFilesDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.chooseConverterDialog_FileOk);
             // 
             // listBoxFilenames
             // 
@@ -82,6 +84,28 @@
             this.listBoxFilenames.SelectedIndexChanged += new System.EventHandler(this.listBoxFilenames_SelectedIndexChanged);
             this.listBoxFilenames.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxFilenames_DragDrop);
             this.listBoxFilenames.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBoxFilenames_DragEnter);
+            // 
+            // textBoxOutput
+            // 
+            this.textBoxOutput.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default, "hccapOutputPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            resources.ApplyResources(this.textBoxOutput, "textBoxOutput");
+            this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.Text = global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default.hccapOutputPath;
+            // 
+            // textBoxConverter
+            // 
+            this.textBoxConverter.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default, "capConverter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            resources.ApplyResources(this.textBoxConverter, "textBoxConverter");
+            this.textBoxConverter.Name = "textBoxConverter";
+            this.textBoxConverter.Text = global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default.capConverter;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.plus_6103;
+            resources.ApplyResources(this.buttonAdd, "buttonAdd");
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonMoveDown
             // 
@@ -123,24 +147,16 @@
             this.buttonChooseConverter.UseVisualStyleBackColor = true;
             this.buttonChooseConverter.Click += new System.EventHandler(this.buttonChooseConverter_Click);
             // 
-            // textBoxOutput
+            // chooseConverterDialog
             // 
-            this.textBoxOutput.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default, "hccapOutputPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            resources.ApplyResources(this.textBoxOutput, "textBoxOutput");
-            this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Text = global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default.hccapOutputPath;
-            // 
-            // textBoxConverter
-            // 
-            this.textBoxConverter.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default, "capConverter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            resources.ApplyResources(this.textBoxConverter, "textBoxConverter");
-            this.textBoxConverter.Name = "textBoxConverter";
-            this.textBoxConverter.Text = global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default.capConverter;
+            this.chooseConverterDialog.FileName = "aircrack-ng.exe";
+            resources.ApplyResources(this.chooseConverterDialog, "chooseConverterDialog");
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonMoveDown);
             this.Controls.Add(this.buttonMoveUp);
             this.Controls.Add(this.buttonDelete);
@@ -169,7 +185,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxOutput;
-        private System.Windows.Forms.OpenFileDialog chooseConverterDialog;
+        private System.Windows.Forms.OpenFileDialog chooseFilesDialog;
         private System.Windows.Forms.Button buttonChooseConverter;
         private System.Windows.Forms.Button buttonChooseOutput;
         private System.Windows.Forms.FolderBrowserDialog chooseOutputDialog;
@@ -177,6 +193,8 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonMoveUp;
         private System.Windows.Forms.Button buttonMoveDown;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.OpenFileDialog chooseConverterDialog;
 
 
 

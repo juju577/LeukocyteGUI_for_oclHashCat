@@ -99,5 +99,15 @@ namespace LeukocyteGUI_for_oclHashCat.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_6103 {
+            get {
+                object obj = ResourceManager.GetObject("plus_6103", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

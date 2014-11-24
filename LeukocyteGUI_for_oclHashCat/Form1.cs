@@ -34,15 +34,12 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void buttonConvert_Click(object sender, EventArgs e)
         {
-            //string aircrack = "E:/Program Files (x86)/oclHashcat/cap2hccap/aircrack-ng.exe";
-            //string savePath = "\"E:/Program Files (x86)/oclHashcat/_hccap/\"";
 
             System.Diagnostics.Process converter = new System.Diagnostics.Process();   
             converter.StartInfo.FileName = "\"" + textBoxConverter.Text + "\"";
 
             for (int i = 0; i < listBoxFilenames.Items.Count; i++)
             {
-                //string file = (listBoxFilenames.Items[i] as string).Replace("\\", "/");
                 string file = listBoxFilenames.Items[i] as string;
 
                 if (file.Length > 4)
@@ -65,12 +62,15 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void buttonChooseConverter_Click(object sender, EventArgs e)
         {
-            chooseConverterDialog.ShowDialog();
+            if (chooseConverterDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                textBoxConverter.Text = chooseConverterDialog.FileName;
+            }
         }
 
         private void buttonChooseOutput_Click(object sender, EventArgs e)
         {
-            if (chooseOutputDialog.ShowDialog() != System.Windows.Forms.DialogResult.Cancel)
+            if (chooseOutputDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 textBoxOutput.Text = chooseOutputDialog.SelectedPath + "\\";
             }
@@ -78,7 +78,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void chooseConverterDialog_FileOk(object sender, CancelEventArgs e)
         {
-            textBoxConverter.Text = chooseConverterDialog.FileName;
+            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace LeukocyteGUI_for_oclHashCat
             }
             else if(listBoxFilenames.Items.Count > index + 1)
             {
-                buffer = (string)listBoxFilenames.Items[index + 1];
+                buffer = (string) listBoxFilenames.Items[index + 1];
                 listBoxFilenames.Items[index + 1] = listBoxFilenames.Items[index];
                 listBoxFilenames.Items[index] = buffer;
                 listBoxFilenames.SelectedIndex = index + 1;
@@ -141,6 +141,17 @@ namespace LeukocyteGUI_for_oclHashCat
                 buttonDelete.Enabled   = true;
                 buttonMoveUp.Enabled   = true;
                 buttonMoveDown.Enabled = true;
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (chooseFilesDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                for (int i = 0; i < chooseFilesDialog.FileNames.Length; i++)
+                {
+                    listBoxFilenames.Items.Add(chooseFilesDialog.FileNames[i].Replace("\\", "/"));
+                }
             }
         }
     }
