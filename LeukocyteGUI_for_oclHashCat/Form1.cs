@@ -34,9 +34,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void buttonConvert_Click(object sender, EventArgs e)
         {
-
-            System.Diagnostics.Process converter = new System.Diagnostics.Process();   
-            converter.StartInfo.FileName = "\"" + textBoxConverter.Text + "\"";
+            Converter converter = new Converter(textBoxOutput.Text, textBoxConverter.Text);
 
             for (int i = 0; i < listBoxFilenames.Items.Count; i++)
             {
@@ -44,11 +42,11 @@ namespace LeukocyteGUI_for_oclHashCat
 
                 if (file.Length > 4)
                 {
-                    converter.StartInfo.Arguments = '"' + file + '"' + " -J " + "\"" + textBoxOutput.Text + "\""
-                        + System.IO.Path.GetFileNameWithoutExtension(file);
-                    converter.Start();
+                    converter.Convert(file);
                 }   
             }
+
+            //converter.WaitForExit();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -74,11 +72,6 @@ namespace LeukocyteGUI_for_oclHashCat
             {
                 textBoxOutput.Text = chooseOutputDialog.SelectedPath + "\\";
             }
-        }
-
-        private void chooseConverterDialog_FileOk(object sender, CancelEventArgs e)
-        {
-            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -154,5 +147,47 @@ namespace LeukocyteGUI_for_oclHashCat
                 }
             }
         }
+    }
+
+    class Converter : System.Diagnostics.Process
+    {
+        public string OutPath = "/";
+        public string ConverterFileName = "aircrack-ng.exe";
+        private bool result = false;
+
+        public Converter(string OutPath, string ConverterFileName) : this()
+        {
+            this.OutPath = OutPath;
+            this.ConverterFileName = ConverterFileName;
+        }
+
+        public Converter()
+        {
+            StartInfo.FileName = "\"" + ConverterFileName + "\"";
+            StartInfo.UseShellExecute = false;
+            StartInfo.CreateNoWindow = true;
+            StartInfo.RedirectStandardOutput = true;
+            OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler(converter_OutputDataReceived);
+        }
+
+        private void converter_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
+        {
+            if (e.Data.Contains("Successfully written"))
+            {
+                this.result = true;
+            }
+        }
+
+        public bool Convert(string fName)
+        {
+            result = false;
+
+            StartInfo.Arguments = '"' + fName + '"' + " -J " + "\"" + OutPath + "\""
+                + System.IO.Path.GetFileNameWithoutExtension(fName);
+            Start();
+            WaitForExit();
+
+            return result;
+        }        
     }
 }

@@ -73,7 +73,6 @@
             // 
             resources.ApplyResources(this.chooseFilesDialog, "chooseFilesDialog");
             this.chooseFilesDialog.Multiselect = true;
-            this.chooseFilesDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.chooseConverterDialog_FileOk);
             // 
             // listBoxFilenames
             // 
