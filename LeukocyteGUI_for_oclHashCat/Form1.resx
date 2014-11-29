@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelFilesToConvert.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="buttonConvert.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonConvert.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <metadata name="chooseFilesDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -283,7 +283,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;listBoxFilenames.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="textBoxOutput.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -307,7 +307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxOutput.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="textBoxConverter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -331,7 +331,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxConverter.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
+  </data>
+  <metadata name="chooseConverterDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="chooseConverterDialog.Filter" xml:space="preserve">
+    <value>Executable files|*.exe</value>
+  </data>
+  <data name="buttonClear.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 199</value>
+  </data>
+  <data name="buttonClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 25</value>
+  </data>
+  <data name="buttonClear.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;buttonClear.Name" xml:space="preserve">
+    <value>buttonClear</value>
+  </data>
+  <data name="&gt;&gt;buttonClear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonClear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonClear.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="buttonAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -355,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonAdd.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="buttonMoveDown.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -364,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMoveDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 230</value>
+    <value>328, 311</value>
   </data>
   <data name="buttonMoveDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 25</value>
@@ -382,7 +415,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonMoveDown.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonMoveUp.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -391,7 +424,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMoveUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 198</value>
+    <value>328, 279</value>
   </data>
   <data name="buttonMoveUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 25</value>
@@ -409,7 +442,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonMoveUp.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -436,7 +469,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonDelete.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="buttonChooseOutput.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -460,7 +493,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonChooseOutput.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="buttonChooseConverter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -484,13 +517,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonChooseConverter.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="chooseConverterDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <data name="chooseConverterDialog.Filter" xml:space="preserve">
-    <value>Executable files|*.exe</value>
+    <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -503,6 +530,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>376, 349</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Convert .cap to .hccap</value>

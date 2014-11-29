@@ -38,13 +38,14 @@
             this.listBoxFilenames = new System.Windows.Forms.ListBox();
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.textBoxConverter = new System.Windows.Forms.TextBox();
+            this.chooseConverterDialog = new System.Windows.Forms.OpenFileDialog();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
             this.buttonMoveUp = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChooseOutput = new System.Windows.Forms.Button();
             this.buttonChooseConverter = new System.Windows.Forms.Button();
-            this.chooseConverterDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // labelFilesToConvert
@@ -98,6 +99,19 @@
             this.textBoxConverter.Name = "textBoxConverter";
             this.textBoxConverter.Text = global::LeukocyteGUI_for_oclHashCat.Properties.Settings.Default.capConverter;
             // 
+            // chooseConverterDialog
+            // 
+            this.chooseConverterDialog.FileName = "aircrack-ng.exe";
+            resources.ApplyResources(this.chooseConverterDialog, "chooseConverterDialog");
+            // 
+            // buttonClear
+            // 
+            resources.ApplyResources(this.buttonClear, "buttonClear");
+            this.buttonClear.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.arrow_circle_315_2306;
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // buttonAdd
             // 
             this.buttonAdd.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.plus_6103;
@@ -146,15 +160,11 @@
             this.buttonChooseConverter.UseVisualStyleBackColor = true;
             this.buttonChooseConverter.Click += new System.EventHandler(this.buttonChooseConverter_Click);
             // 
-            // chooseConverterDialog
-            // 
-            this.chooseConverterDialog.FileName = "aircrack-ng.exe";
-            resources.ApplyResources(this.chooseConverterDialog, "chooseConverterDialog");
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonMoveDown);
             this.Controls.Add(this.buttonMoveUp);
@@ -194,6 +204,7 @@
         private System.Windows.Forms.Button buttonMoveDown;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.OpenFileDialog chooseConverterDialog;
+        private System.Windows.Forms.Button buttonClear;
 
 
 

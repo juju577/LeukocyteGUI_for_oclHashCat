@@ -83,6 +83,16 @@ namespace LeukocyteGUI_for_oclHashCat.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle_315_2306 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle_315_2306", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cross_4264 {
             get {
                 object obj = ResourceManager.GetObject("cross_4264", resourceCulture);

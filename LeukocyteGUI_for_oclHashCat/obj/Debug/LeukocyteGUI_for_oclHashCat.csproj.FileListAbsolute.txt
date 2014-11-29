@@ -10,3 +10,4 @@ E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHas
 E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\bin\Debug\LeukocyteGUI_for_oclHashCat.pdb
 E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.exe
 E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.pdb
+E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.ConvertationStatistics.resources
