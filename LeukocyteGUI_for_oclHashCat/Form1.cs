@@ -20,13 +20,31 @@ namespace LeukocyteGUI_for_oclHashCat
         private void listBoxFilenames_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData("FileDrop", false);
+            string file;
 
             for (int i = 0; i < files.Length; i++)
             {
-                listBoxFilenames.Items.Add(files[i].Replace("\\", "/"));
+                file = files[i].Replace("\\", "/");
+
+                if(System.IO.Path.GetExtension(file) == ".cap")
+                {
+                    listBoxFilenames.Items.Add(file);
+                }
+                else if (System.IO.Directory.Exists(file))
+                {
+                    string[] dirFiles = System.IO.Directory.GetFiles(file, "*.cap");
+
+                    for (int j = 0; j < dirFiles.Length; j++)
+                    {
+                        listBoxFilenames.Items.Add(dirFiles[j].Replace("\\", "/"));
+                    }
+                }
             }
 
-            listBoxFilenames.SelectedIndex = 0;
+            if (listBoxFilenames.Items.Count > 0)
+            {
+                listBoxFilenames.SelectedIndex = 0;
+            }
         }
 
         private void listBoxFilenames_DragEnter(object sender, DragEventArgs e)
