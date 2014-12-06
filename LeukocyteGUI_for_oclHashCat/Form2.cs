@@ -17,6 +17,12 @@ namespace LeukocyteGUI_for_oclHashCat
             InitializeComponent();
         }
 
+        public ConvertationStatistics(int ConvertCount)
+            : this()
+        {
+            progressBarConverting.Value = 0;
+            progressBarConverting.Maximum = ConvertCount;
+        }
         public int ConvertCount
         {
             get
@@ -46,10 +52,21 @@ namespace LeukocyteGUI_for_oclHashCat
             }
         }
 
-        public ConvertationStatistics(int ConvertCount) : this()
+        public void richConvertSuccessAdd(string FileName, bool Success)
         {
-            progressBarConverting.Value = 0;
-            progressBarConverting.Maximum = ConvertCount;
+            richConvertSuccess.SelectionStart = richConvertSuccess.TextLength;
+            richConvertSuccess.SelectionLength = 0;
+
+            if (Success)
+            {
+                richConvertSuccess.SelectionColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                richConvertSuccess.SelectionColor = System.Drawing.Color.Red;
+            }
+
+            richConvertSuccess.AppendText(FileName + "\r\n");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace LeukocyteGUI_for_oclHashCat
             {
                 file = files[i].Replace("\\", "/");
 
-                if(System.IO.Path.GetExtension(file) == ".cap")
+                if (System.IO.Path.GetExtension(file) == ".cap")
                 {
                     listBoxFilenames.Items.Add(file);
                 }
@@ -58,15 +58,16 @@ namespace LeukocyteGUI_for_oclHashCat
             ConvertationStatistics statistics = new ConvertationStatistics(listBoxFilenames.Items.Count);
 
             this.Enabled = false;
+            statistics.Owner = this;
             statistics.Show();
 
             for (int i = 0; i < listBoxFilenames.Items.Count; i++)
             {
-                string file = (string) listBoxFilenames.Items[i];
+                string file = (string)listBoxFilenames.Items[i];
 
                 if (file.Length > 4)
                 {
-                    converter.Convert(file);
+                    statistics.richConvertSuccessAdd(file, converter.Convert(file));
                 }
 
                 statistics.Converted += 1;
@@ -74,6 +75,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
             statistics.Hide();
             this.Enabled = true;
+            this.Select();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -105,7 +107,7 @@ namespace LeukocyteGUI_for_oclHashCat
         {
             int index = listBoxFilenames.SelectedIndex;
 
-            if(index != -1)
+            if (index != -1)
             {
                 listBoxFilenames.Items.RemoveAt(index);
             }
@@ -129,17 +131,17 @@ namespace LeukocyteGUI_for_oclHashCat
 
             if ((sender as Button).Name == "buttonMoveUp")
             {
-                if(index > 0)
+                if (index > 0)
                 {
-                    buffer = (string) listBoxFilenames.Items[index - 1];
+                    buffer = (string)listBoxFilenames.Items[index - 1];
                     listBoxFilenames.Items[index - 1] = listBoxFilenames.Items[index];
                     listBoxFilenames.Items[index] = buffer;
                     listBoxFilenames.SelectedIndex = index - 1;
                 }
             }
-            else if(listBoxFilenames.Items.Count > index + 1)
+            else if (listBoxFilenames.Items.Count > index + 1)
             {
-                buffer = (string) listBoxFilenames.Items[index + 1];
+                buffer = (string)listBoxFilenames.Items[index + 1];
                 listBoxFilenames.Items[index + 1] = listBoxFilenames.Items[index];
                 listBoxFilenames.Items[index] = buffer;
                 listBoxFilenames.SelectedIndex = index + 1;
@@ -197,7 +199,8 @@ namespace LeukocyteGUI_for_oclHashCat
         public string ConverterFileName = "aircrack-ng.exe";
         private bool result = false;
 
-        public Converter(string OutPath, string ConverterFileName) : this()
+        public Converter(string OutPath, string ConverterFileName)
+            : this()
         {
             this.OutPath = OutPath;
             this.ConverterFileName = ConverterFileName;
@@ -214,7 +217,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void converter_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
         {
-            if (e.Data.Contains("Successfully written"))
+            if ((!String.IsNullOrEmpty(e.Data)) && (e.Data.Contains("Successfully written")))
             {
                 this.result = true;
             }
@@ -227,10 +230,12 @@ namespace LeukocyteGUI_for_oclHashCat
             StartInfo.Arguments = '"' + fName + '"' + " -J " + "\"" + OutPath + "\""
                 + System.IO.Path.GetFileNameWithoutExtension(fName);
             Start();
+            BeginOutputReadLine();
             WaitForExit();
+            CancelOutputRead();
             Application.DoEvents();
 
             return result;
-        }   
+        }
     }
 }

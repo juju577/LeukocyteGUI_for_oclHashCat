@@ -31,6 +31,7 @@
             this.progressBarConverting = new System.Windows.Forms.ProgressBar();
             this.labelConverting = new System.Windows.Forms.Label();
             this.labelConvertingStatus = new System.Windows.Forms.Label();
+            this.richConvertSuccess = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // progressBarConverting
@@ -59,11 +60,21 @@
             this.labelConvertingStatus.Text = "0 / 0";
             this.labelConvertingStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // richConvertSuccess
+            // 
+            this.richConvertSuccess.Location = new System.Drawing.Point(12, 73);
+            this.richConvertSuccess.Name = "richConvertSuccess";
+            this.richConvertSuccess.ReadOnly = true;
+            this.richConvertSuccess.Size = new System.Drawing.Size(284, 132);
+            this.richConvertSuccess.TabIndex = 3;
+            this.richConvertSuccess.Text = "";
+            // 
             // ConvertationStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 75);
+            this.ClientSize = new System.Drawing.Size(307, 215);
+            this.Controls.Add(this.richConvertSuccess);
             this.Controls.Add(this.labelConvertingStatus);
             this.Controls.Add(this.labelConverting);
             this.Controls.Add(this.progressBarConverting);
@@ -83,5 +94,6 @@
         private System.Windows.Forms.ProgressBar progressBarConverting;
         private System.Windows.Forms.Label labelConverting;
         private System.Windows.Forms.Label labelConvertingStatus;
+        private System.Windows.Forms.RichTextBox richConvertSuccess;
     }
 }
