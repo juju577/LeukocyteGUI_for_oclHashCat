@@ -208,7 +208,6 @@ namespace LeukocyteGUI_for_oclHashCat
 
         public Converter()
         {
-            StartInfo.FileName = "\"" + ConverterFileName + "\"";
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;
             StartInfo.RedirectStandardOutput = true;
@@ -227,6 +226,7 @@ namespace LeukocyteGUI_for_oclHashCat
         {
             result = false;
 
+            StartInfo.FileName = "\"" + ConverterFileName + "\"";
             StartInfo.Arguments = '"' + fName + '"' + " -J " + "\"" + OutPath + "\""
                 + System.IO.Path.GetFileNameWithoutExtension(fName);
             Start();
