@@ -12,6 +12,8 @@ namespace LeukocyteGUI_for_oclHashCat
 {
     public partial class ConvertationStatistics : Form
     {
+        int cCount = 0, cConverted = 0;
+
         public ConvertationStatistics()
         {
             InitializeComponent();
@@ -20,19 +22,19 @@ namespace LeukocyteGUI_for_oclHashCat
         public ConvertationStatistics(int ConvertCount)
             : this()
         {
-            progressBarConverting.Value = 0;
-            progressBarConverting.Maximum = ConvertCount;
+            cCount = ConvertCount;
         }
+
         public int ConvertCount
         {
             get
             {
-                return progressBarConverting.Maximum;
+                return cCount;
             }
 
             set
             {
-                progressBarConverting.Maximum = value;
+                cCount = value;
                 labelConvertingStatus.Text = "0 / " + value.ToString();
             }
         }
@@ -41,32 +43,63 @@ namespace LeukocyteGUI_for_oclHashCat
         {
             get
             {
-                return progressBarConverting.Value;
+                return cConverted;
             }
 
             set
             {
-                progressBarConverting.Value = value;
+                cConverted = value;
                 labelConvertingStatus.Text = value.ToString() + " / "
-                    + progressBarConverting.Maximum.ToString();
+                    + cCount.ToString();
             }
         }
 
-        public void richConvertSuccessAdd(string FileName, bool Success)
+        public void listViewConvertSuccessChange(int Index, bool Success)
         {
-            richConvertSuccess.SelectionStart = richConvertSuccess.TextLength;
-            richConvertSuccess.SelectionLength = 0;
+            listViewConvertSuccess.Items[Index].Font = new Font(listViewConvertSuccess.Font,
+                FontStyle.Regular);
 
             if (Success)
             {
-                richConvertSuccess.SelectionColor = System.Drawing.Color.Green;
+                listViewConvertSuccess.Items[Index].ImageIndex = 1;
             }
             else
             {
-                richConvertSuccess.SelectionColor = System.Drawing.Color.Red;
+                listViewConvertSuccess.Items[Index].ImageIndex = 0;
             }
 
-            richConvertSuccess.AppendText(FileName + "\r\n");
+            if (Index + 1 < listViewConvertSuccess.Items.Count)
+            {
+                listViewConvertSuccess.Items[Index + 1].Font = new Font(listViewConvertSuccess.Font,
+                    FontStyle.Bold);
+                listViewConvertSuccess.Items[Index + 1].EnsureVisible();
+            }
+        }
+
+        public void listViewConvertSuccessAddItems(string[] Items)
+        {
+            for (int i = 0; i < Items.Length; i++)
+            {
+                listViewConvertSuccess.Items.Add(Items[i], -1);
+            }
+
+            if (listViewConvertSuccess.Items.Count > 0)
+            {
+                listViewConvertSuccess.Items[0].Font = new Font(listViewConvertSuccess.Font,
+                FontStyle.Bold);
+            }
+        }
+
+        public void listViewConvertSuccessAddItems(ListBox.ObjectCollection ListBoxItems)
+        {
+            string[] Items = new string[ListBoxItems.Count];
+
+            for (int i = 0; i < Items.Length; i++)
+            {
+                Items[i] = (string)ListBoxItems[i];
+            }
+
+            listViewConvertSuccessAddItems(Items);
         }
     }
 }

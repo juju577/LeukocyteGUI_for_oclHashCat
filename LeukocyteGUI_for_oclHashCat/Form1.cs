@@ -59,6 +59,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
             this.Enabled = false;
             statistics.Owner = this;
+            statistics.listViewConvertSuccessAddItems(listBoxFilenames.Items);
             statistics.Show();
 
             for (int i = 0; i < listBoxFilenames.Items.Count; i++)
@@ -67,7 +68,8 @@ namespace LeukocyteGUI_for_oclHashCat
 
                 if (file.Length > 4)
                 {
-                    statistics.richConvertSuccessAdd(file, converter.Convert(file));
+                    //statistics.richConvertSuccessAdd(file, converter.Convert(file));
+                    statistics.listViewConvertSuccessChange(i, converter.Convert(file));
                 }
 
                 statistics.Converted += 1;
