@@ -33,9 +33,10 @@
             this.labelConverting = new System.Windows.Forms.Label();
             this.labelConvertingStatus = new System.Windows.Forms.Label();
             this.listViewConvertSuccess = new System.Windows.Forms.ListView();
-            this.imageListConvertStatus = new System.Windows.Forms.ImageList(this.components);
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageListConvertStatus = new System.Windows.Forms.ImageList(this.components);
+            this.buttonConfirmSuccess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelConverting
@@ -66,18 +67,11 @@
             this.listViewConvertSuccess.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewConvertSuccess.Location = new System.Drawing.Point(12, 45);
             this.listViewConvertSuccess.Name = "listViewConvertSuccess";
-            this.listViewConvertSuccess.Size = new System.Drawing.Size(283, 158);
+            this.listViewConvertSuccess.Size = new System.Drawing.Size(283, 161);
             this.listViewConvertSuccess.SmallImageList = this.imageListConvertStatus;
             this.listViewConvertSuccess.TabIndex = 4;
             this.listViewConvertSuccess.UseCompatibleStateImageBehavior = false;
             this.listViewConvertSuccess.View = System.Windows.Forms.View.Details;
-            // 
-            // imageListConvertStatus
-            // 
-            this.imageListConvertStatus.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListConvertStatus.ImageStream")));
-            this.imageListConvertStatus.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListConvertStatus.Images.SetKeyName(0, "button_cancel_5732.png");
-            this.imageListConvertStatus.Images.SetKeyName(1, "button_ok_4174.png");
             // 
             // columnHeader1
             // 
@@ -87,11 +81,30 @@
             // 
             this.columnHeader2.Width = 1;
             // 
+            // imageListConvertStatus
+            // 
+            this.imageListConvertStatus.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListConvertStatus.ImageStream")));
+            this.imageListConvertStatus.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListConvertStatus.Images.SetKeyName(0, "button_cancel_5732.png");
+            this.imageListConvertStatus.Images.SetKeyName(1, "button_ok_4174.png");
+            // 
+            // buttonConfirmSuccess
+            // 
+            this.buttonConfirmSuccess.Enabled = false;
+            this.buttonConfirmSuccess.Location = new System.Drawing.Point(108, 212);
+            this.buttonConfirmSuccess.Name = "buttonConfirmSuccess";
+            this.buttonConfirmSuccess.Size = new System.Drawing.Size(85, 23);
+            this.buttonConfirmSuccess.TabIndex = 5;
+            this.buttonConfirmSuccess.Text = "OK";
+            this.buttonConfirmSuccess.UseVisualStyleBackColor = true;
+            this.buttonConfirmSuccess.Click += new System.EventHandler(this.buttonConfirmSuccess_Click);
+            // 
             // ConvertationStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 215);
+            this.ClientSize = new System.Drawing.Size(307, 247);
+            this.Controls.Add(this.buttonConfirmSuccess);
             this.Controls.Add(this.listViewConvertSuccess);
             this.Controls.Add(this.labelConvertingStatus);
             this.Controls.Add(this.labelConverting);
@@ -99,7 +112,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConvertationStatistics";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Converting";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,5 +127,6 @@
         private System.Windows.Forms.ImageList imageListConvertStatus;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button buttonConfirmSuccess;
     }
 }

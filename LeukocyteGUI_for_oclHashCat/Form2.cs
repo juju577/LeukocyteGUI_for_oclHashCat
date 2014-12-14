@@ -17,6 +17,16 @@ namespace LeukocyteGUI_for_oclHashCat
         public ConvertationStatistics()
         {
             InitializeComponent();
+            listViewConvertSuccess.ShowItemToolTips = true;
+            typeof(Control).InvokeMember(
+                "DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty
+                | System.Reflection.BindingFlags.Instance
+                | System.Reflection.BindingFlags.NonPublic,
+                null,
+                listViewConvertSuccess,
+                new object[] { true }
+            );
         }
 
         public ConvertationStatistics(int ConvertCount)
@@ -100,6 +110,16 @@ namespace LeukocyteGUI_for_oclHashCat
             }
 
             listViewConvertSuccessAddItems(Items);
+        }
+
+        private void buttonConfirmSuccess_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        public void ConversionEnd()
+        {
+            buttonConfirmSuccess.Enabled = true;
         }
     }
 }

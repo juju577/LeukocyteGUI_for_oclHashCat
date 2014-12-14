@@ -130,7 +130,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelFilesToConvert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 82</value>
+    <value>5, 84</value>
   </data>
   <data name="labelFilesToConvert.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 17</value>
@@ -163,7 +163,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonConvert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 78</value>
+    <value>209, 80</value>
   </data>
   <data name="buttonConvert.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 25</value>
@@ -530,6 +530,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>363, 327</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Convert .cap to .hccap</value>

@@ -57,9 +57,18 @@ namespace LeukocyteGUI_for_oclHashCat
             Converter converter = new Converter(textBoxOutput.Text, textBoxConverter.Text);
             ConvertationStatistics statistics = new ConvertationStatistics(listBoxFilenames.Items.Count);
 
+            int x = this.Location.X + (this.Size.Width - statistics.Size.Width) / 2;
+            int y = this.Location.Y + (this.Size.Height - statistics.Size.Height) / 2;
+
             this.Enabled = false;
             statistics.Owner = this;
             statistics.listViewConvertSuccessAddItems(listBoxFilenames.Items);
+            statistics.Location = new Point(x, y);
+            statistics.FormClosed += delegate(object sSender, FormClosedEventArgs se)
+            {
+                this.Enabled = true;
+                this.Select();
+            };
             statistics.Show();
 
             for (int i = 0; i < listBoxFilenames.Items.Count; i++)
@@ -68,16 +77,13 @@ namespace LeukocyteGUI_for_oclHashCat
 
                 if (file.Length > 4)
                 {
-                    //statistics.richConvertSuccessAdd(file, converter.Convert(file));
                     statistics.listViewConvertSuccessChange(i, converter.Convert(file));
                 }
 
                 statistics.Converted += 1;
             }
 
-            statistics.Hide();
-            this.Enabled = true;
-            this.Select();
+            statistics.ConversionEnd();
         }
 
         protected override void OnClosing(CancelEventArgs e)
