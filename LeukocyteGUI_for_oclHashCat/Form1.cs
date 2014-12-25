@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LeukocyteGUI_for_oclHashCat
 {
-    public partial class MainForm : Form
+    public partial class ConverterForm : Form
     {
-        public MainForm()
+        public ConverterForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace LeukocyteGUI_for_oclHashCat
 {
-    partial class MainForm
+    partial class ConverterForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConverterForm));
             this.labelFilesToConvert = new System.Windows.Forms.Label();
             this.buttonConvert = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -160,7 +160,7 @@
             this.buttonChooseConverter.UseVisualStyleBackColor = true;
             this.buttonChooseConverter.Click += new System.EventHandler(this.buttonChooseConverter_Click);
             // 
-            // MainForm
+            // ConverterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +180,7 @@
             this.Controls.Add(this.labelFilesToConvert);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "ConverterForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
