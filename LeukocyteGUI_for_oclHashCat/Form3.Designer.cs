@@ -32,17 +32,17 @@
             "1",
             "MD5",
             "c:\\users\\file.hash",
+            "c:\\users\\file.hash.found",
             "C:\\dictionaries\\dic1.txt",
             "9/10",
             "94.34%",
             "2/10",
             "Cracking",
+            "15:38",
             "15.12.14 14:53:15",
             "",
-            "15:38",
             "12345678"}, -1);
             this.textBoxHashcat = new System.Windows.Forms.TextBox();
-            this.labelHashcat = new System.Windows.Forms.Label();
             this.listViewTasks = new System.Windows.Forms.ListView();
             this.columnHeaderNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHashType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,51 +66,60 @@
             this.buttonUpTask = new System.Windows.Forms.Button();
             this.buttonDeleteTask = new System.Windows.Forms.Button();
             this.buttonAddTask = new System.Windows.Forms.Button();
+            this.columnHeaderOutput = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelOclHashcat = new System.Windows.Forms.Label();
+            this.groupBoxMainSettings = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBoxGPUStatistics = new System.Windows.Forms.GroupBox();
+            this.groupBoxActions = new System.Windows.Forms.GroupBox();
+            this.groupBoxMainSettings.SuspendLayout();
+            this.groupBoxGPUStatistics.SuspendLayout();
+            this.groupBoxActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxHashcat
             // 
-            this.textBoxHashcat.Location = new System.Drawing.Point(100, 12);
+            this.textBoxHashcat.Location = new System.Drawing.Point(82, 22);
             this.textBoxHashcat.Name = "textBoxHashcat";
-            this.textBoxHashcat.Size = new System.Drawing.Size(339, 20);
+            this.textBoxHashcat.Size = new System.Drawing.Size(418, 20);
             this.textBoxHashcat.TabIndex = 8;
             this.textBoxHashcat.Text = "oclHashcat64.exe";
             // 
-            // labelHashcat
-            // 
-            this.labelHashcat.AutoSize = true;
-            this.labelHashcat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelHashcat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelHashcat.Location = new System.Drawing.Point(12, 13);
-            this.labelHashcat.Name = "labelHashcat";
-            this.labelHashcat.Size = new System.Drawing.Size(82, 17);
-            this.labelHashcat.TabIndex = 7;
-            this.labelHashcat.Text = "oclHashcat:";
-            // 
             // listViewTasks
             // 
+            this.listViewTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderNumber,
             this.columnHeaderHashType,
             this.columnHeaderHashFile,
+            this.columnHeaderOutput,
             this.columnHeaderDictionary,
             this.columnHeaderHash,
             this.columnHeaderProgress,
             this.columnHeaderCracked,
             this.columnHeaderStatus,
+            this.columnHeaderEstimated,
             this.columnHeaderStarted,
             this.columnHeaderFinished,
-            this.columnHeaderEstimated,
             this.columnHeaderSession});
             this.listViewTasks.FullRowSelect = true;
             this.listViewTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewTasks.HideSelection = false;
             this.listViewTasks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listViewTasks.Location = new System.Drawing.Point(12, 168);
+            this.listViewTasks.Location = new System.Drawing.Point(11, 144);
             this.listViewTasks.MultiSelect = false;
             this.listViewTasks.Name = "listViewTasks";
-            this.listViewTasks.Size = new System.Drawing.Size(938, 344);
+            this.listViewTasks.Size = new System.Drawing.Size(752, 318);
             this.listViewTasks.TabIndex = 1;
             this.listViewTasks.UseCompatibleStateImageBehavior = false;
             this.listViewTasks.View = System.Windows.Forms.View.Details;
@@ -123,22 +132,22 @@
             // columnHeaderHashType
             // 
             this.columnHeaderHashType.Text = "Hash Type";
-            this.columnHeaderHashType.Width = 66;
+            this.columnHeaderHashType.Width = 67;
             // 
             // columnHeaderHashFile
             // 
             this.columnHeaderHashFile.Text = "Hash File";
-            this.columnHeaderHashFile.Width = 122;
+            this.columnHeaderHashFile.Width = 98;
             // 
             // columnHeaderDictionary
             // 
             this.columnHeaderDictionary.Text = "Dictionary / Mask";
-            this.columnHeaderDictionary.Width = 125;
+            this.columnHeaderDictionary.Width = 124;
             // 
             // columnHeaderHash
             // 
             this.columnHeaderHash.Text = "Hash";
-            this.columnHeaderHash.Width = 62;
+            this.columnHeaderHash.Width = 47;
             // 
             // columnHeaderProgress
             // 
@@ -176,7 +185,7 @@
             // buttonOpenConverter
             // 
             this.buttonOpenConverter.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.message_reply_9020;
-            this.buttonOpenConverter.Location = new System.Drawing.Point(205, 130);
+            this.buttonOpenConverter.Location = new System.Drawing.Point(210, 19);
             this.buttonOpenConverter.Name = "buttonOpenConverter";
             this.buttonOpenConverter.Padding = new System.Windows.Forms.Padding(3);
             this.buttonOpenConverter.Size = new System.Drawing.Size(40, 32);
@@ -188,7 +197,7 @@
             // buttonClearTask
             // 
             this.buttonClearTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.old_view_refresh_4484;
-            this.buttonClearTask.Location = new System.Drawing.Point(149, 130);
+            this.buttonClearTask.Location = new System.Drawing.Point(154, 19);
             this.buttonClearTask.Name = "buttonClearTask";
             this.buttonClearTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonClearTask.Size = new System.Drawing.Size(40, 32);
@@ -199,7 +208,7 @@
             // buttonStopTask
             // 
             this.buttonStopTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.gtk_media_stop_2295;
-            this.buttonStopTask.Location = new System.Drawing.Point(455, 130);
+            this.buttonStopTask.Location = new System.Drawing.Point(460, 19);
             this.buttonStopTask.Name = "buttonStopTask";
             this.buttonStopTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonStopTask.Size = new System.Drawing.Size(40, 32);
@@ -210,7 +219,7 @@
             // buttonPauseTask
             // 
             this.buttonPauseTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.gtk_media_pause_9393;
-            this.buttonPauseTask.Location = new System.Drawing.Point(409, 130);
+            this.buttonPauseTask.Location = new System.Drawing.Point(414, 19);
             this.buttonPauseTask.Name = "buttonPauseTask";
             this.buttonPauseTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonPauseTask.Size = new System.Drawing.Size(40, 32);
@@ -221,7 +230,7 @@
             // buttonStartTask
             // 
             this.buttonStartTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.gtk_media_play_ltr_9072;
-            this.buttonStartTask.Location = new System.Drawing.Point(363, 130);
+            this.buttonStartTask.Location = new System.Drawing.Point(368, 19);
             this.buttonStartTask.Name = "buttonStartTask";
             this.buttonStartTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonStartTask.Size = new System.Drawing.Size(40, 32);
@@ -232,7 +241,7 @@
             // buttonChangeTask
             // 
             this.buttonChangeTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.configure_9863;
-            this.buttonChangeTask.Location = new System.Drawing.Point(103, 130);
+            this.buttonChangeTask.Location = new System.Drawing.Point(108, 19);
             this.buttonChangeTask.Name = "buttonChangeTask";
             this.buttonChangeTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonChangeTask.Size = new System.Drawing.Size(40, 32);
@@ -243,7 +252,7 @@
             // buttonDownTask
             // 
             this.buttonDownTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources._1downarrow_9068;
-            this.buttonDownTask.Location = new System.Drawing.Point(307, 130);
+            this.buttonDownTask.Location = new System.Drawing.Point(312, 19);
             this.buttonDownTask.Name = "buttonDownTask";
             this.buttonDownTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonDownTask.Size = new System.Drawing.Size(40, 32);
@@ -254,7 +263,7 @@
             // buttonUpTask
             // 
             this.buttonUpTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources._1uparrow_2202;
-            this.buttonUpTask.Location = new System.Drawing.Point(261, 130);
+            this.buttonUpTask.Location = new System.Drawing.Point(266, 19);
             this.buttonUpTask.Name = "buttonUpTask";
             this.buttonUpTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonUpTask.Size = new System.Drawing.Size(40, 32);
@@ -265,7 +274,7 @@
             // buttonDeleteTask
             // 
             this.buttonDeleteTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.button_cancel_8125;
-            this.buttonDeleteTask.Location = new System.Drawing.Point(57, 130);
+            this.buttonDeleteTask.Location = new System.Drawing.Point(62, 19);
             this.buttonDeleteTask.Name = "buttonDeleteTask";
             this.buttonDeleteTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonDeleteTask.Size = new System.Drawing.Size(40, 32);
@@ -276,7 +285,7 @@
             // buttonAddTask
             // 
             this.buttonAddTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.edit_add_7148;
-            this.buttonAddTask.Location = new System.Drawing.Point(11, 130);
+            this.buttonAddTask.Location = new System.Drawing.Point(16, 19);
             this.buttonAddTask.Name = "buttonAddTask";
             this.buttonAddTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonAddTask.Size = new System.Drawing.Size(40, 32);
@@ -285,35 +294,172 @@
             this.buttonAddTask.UseVisualStyleBackColor = true;
             this.buttonAddTask.Click += new System.EventHandler(this.buttonAddTask_Click);
             // 
+            // columnHeaderOutput
+            // 
+            this.columnHeaderOutput.Text = "Output File";
+            this.columnHeaderOutput.Width = 131;
+            // 
+            // labelOclHashcat
+            // 
+            this.labelOclHashcat.AutoSize = true;
+            this.labelOclHashcat.Location = new System.Drawing.Point(12, 25);
+            this.labelOclHashcat.Name = "labelOclHashcat";
+            this.labelOclHashcat.Size = new System.Drawing.Size(64, 13);
+            this.labelOclHashcat.TabIndex = 19;
+            this.labelOclHashcat.Text = "oclHashcat:";
+            // 
+            // groupBoxMainSettings
+            // 
+            this.groupBoxMainSettings.Controls.Add(this.labelOclHashcat);
+            this.groupBoxMainSettings.Controls.Add(this.textBoxHashcat);
+            this.groupBoxMainSettings.Location = new System.Drawing.Point(11, 12);
+            this.groupBoxMainSettings.Name = "groupBoxMainSettings";
+            this.groupBoxMainSettings.Size = new System.Drawing.Size(517, 57);
+            this.groupBoxMainSettings.TabIndex = 20;
+            this.groupBoxMainSettings.TabStop = false;
+            this.groupBoxMainSettings.Text = "Main Settings";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(17, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "GPU Speed:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(122, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(17, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "GPU Temp:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(122, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 17);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(122, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 17);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(17, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "GPU Util:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(122, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 17);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(17, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 17);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Fan Speed:";
+            // 
+            // groupBoxGPUStatistics
+            // 
+            this.groupBoxGPUStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxGPUStatistics.Controls.Add(this.label8);
+            this.groupBoxGPUStatistics.Controls.Add(this.label7);
+            this.groupBoxGPUStatistics.Controls.Add(this.label6);
+            this.groupBoxGPUStatistics.Controls.Add(this.label5);
+            this.groupBoxGPUStatistics.Controls.Add(this.label3);
+            this.groupBoxGPUStatistics.Controls.Add(this.label4);
+            this.groupBoxGPUStatistics.Controls.Add(this.label1);
+            this.groupBoxGPUStatistics.Controls.Add(this.label2);
+            this.groupBoxGPUStatistics.Location = new System.Drawing.Point(534, 12);
+            this.groupBoxGPUStatistics.Name = "groupBoxGPUStatistics";
+            this.groupBoxGPUStatistics.Size = new System.Drawing.Size(229, 126);
+            this.groupBoxGPUStatistics.TabIndex = 29;
+            this.groupBoxGPUStatistics.TabStop = false;
+            this.groupBoxGPUStatistics.Text = "GPU Statistics";
+            // 
+            // groupBoxActions
+            // 
+            this.groupBoxActions.Controls.Add(this.buttonAddTask);
+            this.groupBoxActions.Controls.Add(this.buttonDeleteTask);
+            this.groupBoxActions.Controls.Add(this.buttonUpTask);
+            this.groupBoxActions.Controls.Add(this.buttonOpenConverter);
+            this.groupBoxActions.Controls.Add(this.buttonDownTask);
+            this.groupBoxActions.Controls.Add(this.buttonClearTask);
+            this.groupBoxActions.Controls.Add(this.buttonChangeTask);
+            this.groupBoxActions.Controls.Add(this.buttonStopTask);
+            this.groupBoxActions.Controls.Add(this.buttonStartTask);
+            this.groupBoxActions.Controls.Add(this.buttonPauseTask);
+            this.groupBoxActions.Location = new System.Drawing.Point(11, 75);
+            this.groupBoxActions.Name = "groupBoxActions";
+            this.groupBoxActions.Size = new System.Drawing.Size(517, 63);
+            this.groupBoxActions.TabIndex = 30;
+            this.groupBoxActions.TabStop = false;
+            this.groupBoxActions.Text = "Actions";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 524);
-            this.Controls.Add(this.buttonOpenConverter);
-            this.Controls.Add(this.buttonClearTask);
-            this.Controls.Add(this.buttonStopTask);
-            this.Controls.Add(this.buttonPauseTask);
-            this.Controls.Add(this.buttonStartTask);
-            this.Controls.Add(this.buttonChangeTask);
-            this.Controls.Add(this.buttonDownTask);
-            this.Controls.Add(this.buttonUpTask);
-            this.Controls.Add(this.buttonDeleteTask);
-            this.Controls.Add(this.buttonAddTask);
-            this.Controls.Add(this.textBoxHashcat);
-            this.Controls.Add(this.labelHashcat);
+            this.ClientSize = new System.Drawing.Size(776, 474);
+            this.Controls.Add(this.groupBoxActions);
+            this.Controls.Add(this.groupBoxGPUStatistics);
+            this.Controls.Add(this.groupBoxMainSettings);
             this.Controls.Add(this.listViewTasks);
             this.Name = "MainForm";
             this.Text = "LeukocyteGUI for oclHashCat";
+            this.groupBoxMainSettings.ResumeLayout(false);
+            this.groupBoxMainSettings.PerformLayout();
+            this.groupBoxGPUStatistics.ResumeLayout(false);
+            this.groupBoxGPUStatistics.PerformLayout();
+            this.groupBoxActions.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.TextBox textBoxHashcat;
-        private System.Windows.Forms.Label labelHashcat;
         private System.Windows.Forms.ListView listViewTasks;
         private System.Windows.Forms.ColumnHeader columnHeaderNumber;
         private System.Windows.Forms.ColumnHeader columnHeaderHashType;
@@ -337,5 +483,18 @@
         private System.Windows.Forms.Button buttonClearTask;
         private System.Windows.Forms.ColumnHeader columnHeaderDictionary;
         private System.Windows.Forms.Button buttonOpenConverter;
+        private System.Windows.Forms.ColumnHeader columnHeaderOutput;
+        private System.Windows.Forms.Label labelOclHashcat;
+        private System.Windows.Forms.GroupBox groupBoxMainSettings;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBoxGPUStatistics;
+        private System.Windows.Forms.GroupBox groupBoxActions;
     }
 }

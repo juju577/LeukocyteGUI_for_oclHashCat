@@ -171,7 +171,10 @@ namespace LeukocyteGUI_for_oclHashCat
                 }
             }
 
-            listBoxFilenames.SelectedIndex = 0;
+            if (listBoxFilenames.Items.Count > 0)
+            {
+                listBoxFilenames.SelectedIndex = 0;
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
