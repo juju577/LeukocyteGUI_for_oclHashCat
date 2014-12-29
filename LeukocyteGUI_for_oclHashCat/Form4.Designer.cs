@@ -84,7 +84,7 @@
             this.comboBoxWorkloadTuning = new System.Windows.Forms.ComboBox();
             this.checkBoxWorkloadTuning = new System.Windows.Forms.CheckBox();
             this.comboBoxWorkloadProfile = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpecificWorkloadProfile = new System.Windows.Forms.CheckBox();
             this.checkBoxGPUAsync = new System.Windows.Forms.CheckBox();
             this.groupBoxActions = new System.Windows.Forms.GroupBox();
             this.buttonCancelTask = new System.Windows.Forms.Button();
@@ -658,7 +658,7 @@
             this.groupBoxGPUResources.Controls.Add(this.comboBoxWorkloadTuning);
             this.groupBoxGPUResources.Controls.Add(this.checkBoxWorkloadTuning);
             this.groupBoxGPUResources.Controls.Add(this.comboBoxWorkloadProfile);
-            this.groupBoxGPUResources.Controls.Add(this.checkBox1);
+            this.groupBoxGPUResources.Controls.Add(this.checkBoxSpecificWorkloadProfile);
             this.groupBoxGPUResources.Controls.Add(this.checkBoxGPUAsync);
             this.groupBoxGPUResources.Location = new System.Drawing.Point(13, 299);
             this.groupBoxGPUResources.Name = "groupBoxGPUResources";
@@ -817,15 +817,15 @@
             this.comboBoxWorkloadProfile.Size = new System.Drawing.Size(158, 21);
             this.comboBoxWorkloadProfile.TabIndex = 17;
             // 
-            // checkBox1
+            // checkBoxSpecificWorkloadProfile
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 45);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(144, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Specific workload profile:";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxSpecificWorkloadProfile.AutoSize = true;
+            this.checkBoxSpecificWorkloadProfile.Location = new System.Drawing.Point(16, 45);
+            this.checkBoxSpecificWorkloadProfile.Name = "checkBoxSpecificWorkloadProfile";
+            this.checkBoxSpecificWorkloadProfile.Size = new System.Drawing.Size(144, 17);
+            this.checkBoxSpecificWorkloadProfile.TabIndex = 16;
+            this.checkBoxSpecificWorkloadProfile.Text = "Specific workload profile:";
+            this.checkBoxSpecificWorkloadProfile.UseVisualStyleBackColor = true;
             // 
             // checkBoxGPUAsync
             // 
@@ -960,7 +960,7 @@
         private System.Windows.Forms.TextBox textBoxOutputFile;
         private System.Windows.Forms.GroupBox groupBoxGPUResources;
         private System.Windows.Forms.ComboBox comboBoxWorkloadProfile;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxSpecificWorkloadProfile;
         private System.Windows.Forms.CheckBox checkBoxGPUAsync;
         private System.Windows.Forms.NumericUpDown numericUpDownIncrementMax;
         private System.Windows.Forms.Label labelIncrementMax;
