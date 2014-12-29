@@ -42,7 +42,7 @@
             this.textBoxCharset1 = new System.Windows.Forms.TextBox();
             this.textBoxDictionary = new System.Windows.Forms.TextBox();
             this.textBoxBruteforceMask = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxHash = new System.Windows.Forms.GroupBox();
             this.labelSeparator = new System.Windows.Forms.Label();
             this.textBoxSeparator = new System.Windows.Forms.TextBox();
             this.comboBoxHashType = new System.Windows.Forms.ComboBox();
@@ -91,7 +91,7 @@
             this.buttonSubmitTask = new System.Windows.Forms.Button();
             this.buttonClearTask = new System.Windows.Forms.Button();
             this.groupBoxAttackType.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxHash.SuspendLayout();
             this.groupBoxIncrement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIncrementMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIncrementMin)).BeginInit();
@@ -109,7 +109,7 @@
             this.textBoxHashcat.Location = new System.Drawing.Point(77, 19);
             this.textBoxHashcat.Name = "textBoxHashcat";
             this.textBoxHashcat.Size = new System.Drawing.Size(225, 20);
-            this.textBoxHashcat.TabIndex = 10;
+            this.textBoxHashcat.TabIndex = 0;
             // 
             // radioButtonAttackTypeBrute
             // 
@@ -118,7 +118,7 @@
             this.radioButtonAttackTypeBrute.Location = new System.Drawing.Point(16, 22);
             this.radioButtonAttackTypeBrute.Name = "radioButtonAttackTypeBrute";
             this.radioButtonAttackTypeBrute.Size = new System.Drawing.Size(111, 17);
-            this.radioButtonAttackTypeBrute.TabIndex = 11;
+            this.radioButtonAttackTypeBrute.TabIndex = 3;
             this.radioButtonAttackTypeBrute.TabStop = true;
             this.radioButtonAttackTypeBrute.Text = "Mask (bruteforce):";
             this.radioButtonAttackTypeBrute.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.radioButtonAttackTypeDictionary.Location = new System.Drawing.Point(16, 163);
             this.radioButtonAttackTypeDictionary.Name = "radioButtonAttackTypeDictionary";
             this.radioButtonAttackTypeDictionary.Size = new System.Drawing.Size(108, 17);
-            this.radioButtonAttackTypeDictionary.TabIndex = 12;
+            this.radioButtonAttackTypeDictionary.TabIndex = 13;
             this.radioButtonAttackTypeDictionary.Text = "Dictionary attack:";
             this.radioButtonAttackTypeDictionary.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +150,7 @@
             this.groupBoxAttackType.Location = new System.Drawing.Point(13, 97);
             this.groupBoxAttackType.Name = "groupBoxAttackType";
             this.groupBoxAttackType.Size = new System.Drawing.Size(345, 196);
-            this.groupBoxAttackType.TabIndex = 13;
+            this.groupBoxAttackType.TabIndex = 1;
             this.groupBoxAttackType.TabStop = false;
             this.groupBoxAttackType.Text = "Attack type";
             // 
@@ -160,7 +160,7 @@
             this.checkBoxCharset4.Location = new System.Drawing.Point(30, 132);
             this.checkBoxCharset4.Name = "checkBoxCharset4";
             this.checkBoxCharset4.Size = new System.Drawing.Size(74, 17);
-            this.checkBoxCharset4.TabIndex = 26;
+            this.checkBoxCharset4.TabIndex = 11;
             this.checkBoxCharset4.Text = "Charset 4:";
             this.checkBoxCharset4.UseVisualStyleBackColor = true;
             // 
@@ -169,7 +169,7 @@
             this.textBoxCharset4.Location = new System.Drawing.Point(110, 130);
             this.textBoxCharset4.Name = "textBoxCharset4";
             this.textBoxCharset4.Size = new System.Drawing.Size(192, 20);
-            this.textBoxCharset4.TabIndex = 25;
+            this.textBoxCharset4.TabIndex = 12;
             // 
             // checkBoxCharset3
             // 
@@ -177,7 +177,7 @@
             this.checkBoxCharset3.Location = new System.Drawing.Point(30, 106);
             this.checkBoxCharset3.Name = "checkBoxCharset3";
             this.checkBoxCharset3.Size = new System.Drawing.Size(74, 17);
-            this.checkBoxCharset3.TabIndex = 24;
+            this.checkBoxCharset3.TabIndex = 9;
             this.checkBoxCharset3.Text = "Charset 3:";
             this.checkBoxCharset3.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +186,7 @@
             this.textBoxCharset3.Location = new System.Drawing.Point(110, 104);
             this.textBoxCharset3.Name = "textBoxCharset3";
             this.textBoxCharset3.Size = new System.Drawing.Size(192, 20);
-            this.textBoxCharset3.TabIndex = 23;
+            this.textBoxCharset3.TabIndex = 10;
             // 
             // checkBoxCharset2
             // 
@@ -194,7 +194,7 @@
             this.checkBoxCharset2.Location = new System.Drawing.Point(30, 80);
             this.checkBoxCharset2.Name = "checkBoxCharset2";
             this.checkBoxCharset2.Size = new System.Drawing.Size(74, 17);
-            this.checkBoxCharset2.TabIndex = 22;
+            this.checkBoxCharset2.TabIndex = 7;
             this.checkBoxCharset2.Text = "Charset 2:";
             this.checkBoxCharset2.UseVisualStyleBackColor = true;
             // 
@@ -203,7 +203,7 @@
             this.textBoxCharset2.Location = new System.Drawing.Point(110, 78);
             this.textBoxCharset2.Name = "textBoxCharset2";
             this.textBoxCharset2.Size = new System.Drawing.Size(192, 20);
-            this.textBoxCharset2.TabIndex = 21;
+            this.textBoxCharset2.TabIndex = 8;
             // 
             // checkBoxCharset1
             // 
@@ -211,7 +211,7 @@
             this.checkBoxCharset1.Location = new System.Drawing.Point(30, 54);
             this.checkBoxCharset1.Name = "checkBoxCharset1";
             this.checkBoxCharset1.Size = new System.Drawing.Size(74, 17);
-            this.checkBoxCharset1.TabIndex = 20;
+            this.checkBoxCharset1.TabIndex = 5;
             this.checkBoxCharset1.Text = "Charset 1:";
             this.checkBoxCharset1.UseVisualStyleBackColor = true;
             // 
@@ -220,36 +220,36 @@
             this.textBoxCharset1.Location = new System.Drawing.Point(110, 52);
             this.textBoxCharset1.Name = "textBoxCharset1";
             this.textBoxCharset1.Size = new System.Drawing.Size(192, 20);
-            this.textBoxCharset1.TabIndex = 16;
+            this.textBoxCharset1.TabIndex = 6;
             // 
             // textBoxDictionary
             // 
             this.textBoxDictionary.Location = new System.Drawing.Point(138, 162);
             this.textBoxDictionary.Name = "textBoxDictionary";
             this.textBoxDictionary.Size = new System.Drawing.Size(186, 20);
-            this.textBoxDictionary.TabIndex = 15;
+            this.textBoxDictionary.TabIndex = 14;
             // 
             // textBoxBruteforceMask
             // 
             this.textBoxBruteforceMask.Location = new System.Drawing.Point(138, 21);
             this.textBoxBruteforceMask.Name = "textBoxBruteforceMask";
             this.textBoxBruteforceMask.Size = new System.Drawing.Size(186, 20);
-            this.textBoxBruteforceMask.TabIndex = 14;
+            this.textBoxBruteforceMask.TabIndex = 4;
             // 
-            // groupBox1
+            // groupBoxHash
             // 
-            this.groupBox1.Controls.Add(this.labelSeparator);
-            this.groupBox1.Controls.Add(this.textBoxSeparator);
-            this.groupBox1.Controls.Add(this.comboBoxHashType);
-            this.groupBox1.Controls.Add(this.labelHashType);
-            this.groupBox1.Controls.Add(this.labelHashFile);
-            this.groupBox1.Controls.Add(this.textBoxHashcat);
-            this.groupBox1.Location = new System.Drawing.Point(13, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(433, 79);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hash";
+            this.groupBoxHash.Controls.Add(this.labelSeparator);
+            this.groupBoxHash.Controls.Add(this.textBoxSeparator);
+            this.groupBoxHash.Controls.Add(this.comboBoxHashType);
+            this.groupBoxHash.Controls.Add(this.labelHashType);
+            this.groupBoxHash.Controls.Add(this.labelHashFile);
+            this.groupBoxHash.Controls.Add(this.textBoxHashcat);
+            this.groupBoxHash.Location = new System.Drawing.Point(13, 12);
+            this.groupBoxHash.Name = "groupBoxHash";
+            this.groupBoxHash.Size = new System.Drawing.Size(433, 79);
+            this.groupBoxHash.TabIndex = 0;
+            this.groupBoxHash.TabStop = false;
+            this.groupBoxHash.Text = "Hash";
             // 
             // labelSeparator
             // 
@@ -265,7 +265,7 @@
             this.textBoxSeparator.Location = new System.Drawing.Point(380, 19);
             this.textBoxSeparator.Name = "textBoxSeparator";
             this.textBoxSeparator.Size = new System.Drawing.Size(36, 20);
-            this.textBoxSeparator.TabIndex = 14;
+            this.textBoxSeparator.TabIndex = 1;
             this.textBoxSeparator.Text = ":";
             this.textBoxSeparator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -390,7 +390,7 @@
             this.comboBoxHashType.Location = new System.Drawing.Point(77, 46);
             this.comboBoxHashType.Name = "comboBoxHashType";
             this.comboBoxHashType.Size = new System.Drawing.Size(339, 21);
-            this.comboBoxHashType.TabIndex = 13;
+            this.comboBoxHashType.TabIndex = 2;
             // 
             // labelHashType
             // 
@@ -417,44 +417,44 @@
             this.groupBoxIncrement.Controls.Add(this.numericUpDownIncrementMin);
             this.groupBoxIncrement.Controls.Add(this.labelIncrementMin);
             this.groupBoxIncrement.Controls.Add(this.checkBoxEnableIncrement);
-            this.groupBoxIncrement.Location = new System.Drawing.Point(368, 349);
+            this.groupBoxIncrement.Location = new System.Drawing.Point(368, 97);
             this.groupBoxIncrement.Name = "groupBoxIncrement";
             this.groupBoxIncrement.Size = new System.Drawing.Size(274, 81);
-            this.groupBoxIncrement.TabIndex = 15;
+            this.groupBoxIncrement.TabIndex = 2;
             this.groupBoxIncrement.TabStop = false;
-            this.groupBoxIncrement.Text = "Increment Mode";
+            this.groupBoxIncrement.Text = "Password length";
             // 
             // numericUpDownIncrementMax
             // 
-            this.numericUpDownIncrementMax.Location = new System.Drawing.Point(195, 49);
+            this.numericUpDownIncrementMax.Location = new System.Drawing.Point(207, 49);
             this.numericUpDownIncrementMax.Name = "numericUpDownIncrementMax";
             this.numericUpDownIncrementMax.Size = new System.Drawing.Size(45, 20);
-            this.numericUpDownIncrementMax.TabIndex = 18;
+            this.numericUpDownIncrementMax.TabIndex = 39;
             // 
             // labelIncrementMax
             // 
             this.labelIncrementMax.AutoSize = true;
-            this.labelIncrementMax.Location = new System.Drawing.Point(164, 51);
+            this.labelIncrementMax.Location = new System.Drawing.Point(139, 51);
             this.labelIncrementMax.Name = "labelIncrementMax";
-            this.labelIncrementMax.Size = new System.Drawing.Size(30, 13);
+            this.labelIncrementMax.Size = new System.Drawing.Size(62, 13);
             this.labelIncrementMax.TabIndex = 17;
-            this.labelIncrementMax.Text = "Max:";
+            this.labelIncrementMax.Text = "Max length:";
             // 
             // numericUpDownIncrementMin
             // 
-            this.numericUpDownIncrementMin.Location = new System.Drawing.Point(61, 49);
+            this.numericUpDownIncrementMin.Location = new System.Drawing.Point(84, 49);
             this.numericUpDownIncrementMin.Name = "numericUpDownIncrementMin";
             this.numericUpDownIncrementMin.Size = new System.Drawing.Size(45, 20);
-            this.numericUpDownIncrementMin.TabIndex = 16;
+            this.numericUpDownIncrementMin.TabIndex = 38;
             // 
             // labelIncrementMin
             // 
             this.labelIncrementMin.AutoSize = true;
-            this.labelIncrementMin.Location = new System.Drawing.Point(30, 51);
+            this.labelIncrementMin.Location = new System.Drawing.Point(14, 51);
             this.labelIncrementMin.Name = "labelIncrementMin";
-            this.labelIncrementMin.Size = new System.Drawing.Size(27, 13);
+            this.labelIncrementMin.Size = new System.Drawing.Size(64, 13);
             this.labelIncrementMin.TabIndex = 13;
-            this.labelIncrementMin.Text = "Min:";
+            this.labelIncrementMin.Text = "Start length:";
             // 
             // checkBoxEnableIncrement
             // 
@@ -462,7 +462,7 @@
             this.checkBoxEnableIncrement.Location = new System.Drawing.Point(15, 21);
             this.checkBoxEnableIncrement.Name = "checkBoxEnableIncrement";
             this.checkBoxEnableIncrement.Size = new System.Drawing.Size(139, 17);
-            this.checkBoxEnableIncrement.TabIndex = 0;
+            this.checkBoxEnableIncrement.TabIndex = 37;
             this.checkBoxEnableIncrement.Text = "Enable Increment Mode";
             this.checkBoxEnableIncrement.UseVisualStyleBackColor = true;
             // 
@@ -478,10 +478,10 @@
             this.groupBoxOptions.Controls.Add(this.checkBoxIgnoreWarnings);
             this.groupBoxOptions.Controls.Add(this.checkBoxSaltIsInHex);
             this.groupBoxOptions.Controls.Add(this.checkBoxCharsetIsInHex);
-            this.groupBoxOptions.Location = new System.Drawing.Point(368, 97);
+            this.groupBoxOptions.Location = new System.Drawing.Point(368, 277);
             this.groupBoxOptions.Name = "groupBoxOptions";
             this.groupBoxOptions.Size = new System.Drawing.Size(274, 246);
-            this.groupBoxOptions.TabIndex = 16;
+            this.groupBoxOptions.TabIndex = 5;
             this.groupBoxOptions.TabStop = false;
             this.groupBoxOptions.Text = "Options";
             // 
@@ -490,7 +490,7 @@
             this.textBoxSessionId.Location = new System.Drawing.Point(73, 21);
             this.textBoxSessionId.Name = "textBoxSessionId";
             this.textBoxSessionId.Size = new System.Drawing.Size(182, 20);
-            this.textBoxSessionId.TabIndex = 11;
+            this.textBoxSessionId.TabIndex = 28;
             // 
             // labelSessionId
             // 
@@ -507,7 +507,7 @@
             this.checkBoxDisableLog.Location = new System.Drawing.Point(16, 216);
             this.checkBoxDisableLog.Name = "checkBoxDisableLog";
             this.checkBoxDisableLog.Size = new System.Drawing.Size(109, 17);
-            this.checkBoxDisableLog.TabIndex = 7;
+            this.checkBoxDisableLog.TabIndex = 36;
             this.checkBoxDisableLog.Text = "Disable the logfile";
             this.checkBoxDisableLog.UseVisualStyleBackColor = true;
             // 
@@ -517,7 +517,7 @@
             this.checkBoxDisablePot.Location = new System.Drawing.Point(16, 193);
             this.checkBoxDisablePot.Name = "checkBoxDisablePot";
             this.checkBoxDisablePot.Size = new System.Drawing.Size(114, 17);
-            this.checkBoxDisablePot.TabIndex = 6;
+            this.checkBoxDisablePot.TabIndex = 35;
             this.checkBoxDisablePot.Text = "Do not write potfile";
             this.checkBoxDisablePot.UseVisualStyleBackColor = true;
             // 
@@ -527,7 +527,7 @@
             this.checkBoxRemoveCracked.Location = new System.Drawing.Point(16, 169);
             this.checkBoxRemoveCracked.Name = "checkBoxRemoveCracked";
             this.checkBoxRemoveCracked.Size = new System.Drawing.Size(179, 17);
-            this.checkBoxRemoveCracked.TabIndex = 5;
+            this.checkBoxRemoveCracked.TabIndex = 34;
             this.checkBoxRemoveCracked.Text = "Remove hash once it is cracked";
             this.checkBoxRemoveCracked.UseVisualStyleBackColor = true;
             // 
@@ -537,7 +537,7 @@
             this.checkBoxIgnoreUsernames.Location = new System.Drawing.Point(16, 146);
             this.checkBoxIgnoreUsernames.Name = "checkBoxIgnoreUsernames";
             this.checkBoxIgnoreUsernames.Size = new System.Drawing.Size(160, 17);
-            this.checkBoxIgnoreUsernames.TabIndex = 4;
+            this.checkBoxIgnoreUsernames.TabIndex = 33;
             this.checkBoxIgnoreUsernames.Text = "Ignore usernames in hashfile";
             this.checkBoxIgnoreUsernames.UseVisualStyleBackColor = true;
             // 
@@ -547,7 +547,7 @@
             this.checkBoxLoopback.Location = new System.Drawing.Point(16, 123);
             this.checkBoxLoopback.Name = "checkBoxLoopback";
             this.checkBoxLoopback.Size = new System.Drawing.Size(185, 17);
-            this.checkBoxLoopback.TabIndex = 3;
+            this.checkBoxLoopback.TabIndex = 32;
             this.checkBoxLoopback.Text = "Add new plains to induct directory";
             this.checkBoxLoopback.UseVisualStyleBackColor = true;
             // 
@@ -557,7 +557,7 @@
             this.checkBoxIgnoreWarnings.Location = new System.Drawing.Point(16, 100);
             this.checkBoxIgnoreWarnings.Name = "checkBoxIgnoreWarnings";
             this.checkBoxIgnoreWarnings.Size = new System.Drawing.Size(101, 17);
-            this.checkBoxIgnoreWarnings.TabIndex = 2;
+            this.checkBoxIgnoreWarnings.TabIndex = 31;
             this.checkBoxIgnoreWarnings.Text = "Ignore warnings";
             this.checkBoxIgnoreWarnings.UseVisualStyleBackColor = true;
             // 
@@ -567,7 +567,7 @@
             this.checkBoxSaltIsInHex.Location = new System.Drawing.Point(16, 77);
             this.checkBoxSaltIsInHex.Name = "checkBoxSaltIsInHex";
             this.checkBoxSaltIsInHex.Size = new System.Drawing.Size(152, 17);
-            this.checkBoxSaltIsInHex.TabIndex = 1;
+            this.checkBoxSaltIsInHex.TabIndex = 30;
             this.checkBoxSaltIsInHex.Text = "Assume salt is given in hex";
             this.checkBoxSaltIsInHex.UseVisualStyleBackColor = true;
             // 
@@ -577,7 +577,7 @@
             this.checkBoxCharsetIsInHex.Location = new System.Drawing.Point(16, 54);
             this.checkBoxCharsetIsInHex.Name = "checkBoxCharsetIsInHex";
             this.checkBoxCharsetIsInHex.Size = new System.Drawing.Size(171, 17);
-            this.checkBoxCharsetIsInHex.TabIndex = 0;
+            this.checkBoxCharsetIsInHex.TabIndex = 29;
             this.checkBoxCharsetIsInHex.Text = "Assume charset is given in hex";
             this.checkBoxCharsetIsInHex.UseVisualStyleBackColor = true;
             // 
@@ -587,10 +587,10 @@
             this.groupBoxOutput.Controls.Add(this.labelOutputFormat);
             this.groupBoxOutput.Controls.Add(this.labelOutputFile);
             this.groupBoxOutput.Controls.Add(this.textBoxOutputFile);
-            this.groupBoxOutput.Location = new System.Drawing.Point(368, 436);
+            this.groupBoxOutput.Location = new System.Drawing.Point(368, 184);
             this.groupBoxOutput.Name = "groupBoxOutput";
             this.groupBoxOutput.Size = new System.Drawing.Size(274, 87);
-            this.groupBoxOutput.TabIndex = 17;
+            this.groupBoxOutput.TabIndex = 3;
             this.groupBoxOutput.TabStop = false;
             this.groupBoxOutput.Text = "Output";
             // 
@@ -616,7 +616,7 @@
             this.comboBoxOutputFormat.Location = new System.Drawing.Point(61, 51);
             this.comboBoxOutputFormat.Name = "comboBoxOutputFormat";
             this.comboBoxOutputFormat.Size = new System.Drawing.Size(194, 21);
-            this.comboBoxOutputFormat.TabIndex = 17;
+            this.comboBoxOutputFormat.TabIndex = 41;
             // 
             // labelOutputFormat
             // 
@@ -641,7 +641,7 @@
             this.textBoxOutputFile.Location = new System.Drawing.Point(61, 22);
             this.textBoxOutputFile.Name = "textBoxOutputFile";
             this.textBoxOutputFile.Size = new System.Drawing.Size(194, 20);
-            this.textBoxOutputFile.TabIndex = 14;
+            this.textBoxOutputFile.TabIndex = 40;
             // 
             // groupBoxGPUResources
             // 
@@ -663,7 +663,7 @@
             this.groupBoxGPUResources.Location = new System.Drawing.Point(13, 299);
             this.groupBoxGPUResources.Name = "groupBoxGPUResources";
             this.groupBoxGPUResources.Size = new System.Drawing.Size(345, 224);
-            this.groupBoxGPUResources.TabIndex = 18;
+            this.groupBoxGPUResources.TabIndex = 4;
             this.groupBoxGPUResources.TabStop = false;
             this.groupBoxGPUResources.Text = "GPU / Resources";
             // 
@@ -673,7 +673,7 @@
             this.checkBoxDisablePowertune.Location = new System.Drawing.Point(16, 195);
             this.checkBoxDisablePowertune.Name = "checkBoxDisablePowertune";
             this.checkBoxDisablePowertune.Size = new System.Drawing.Size(321, 17);
-            this.checkBoxDisablePowertune.TabIndex = 30;
+            this.checkBoxDisablePowertune.TabIndex = 27;
             this.checkBoxDisablePowertune.Text = "Disable automatic power tuning option (AMD OverDrive 6 only)";
             this.checkBoxDisablePowertune.UseVisualStyleBackColor = true;
             // 
@@ -687,7 +687,7 @@
             0});
             this.numericUpDownTempRetain.Name = "numericUpDownTempRetain";
             this.numericUpDownTempRetain.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDownTempRetain.TabIndex = 29;
+            this.numericUpDownTempRetain.TabIndex = 26;
             // 
             // labelCelsiusAMD
             // 
@@ -704,7 +704,7 @@
             this.checkBoxTempRetain.Location = new System.Drawing.Point(16, 170);
             this.checkBoxTempRetain.Name = "checkBoxTempRetain";
             this.checkBoxTempRetain.Size = new System.Drawing.Size(179, 17);
-            this.checkBoxTempRetain.TabIndex = 27;
+            this.checkBoxTempRetain.TabIndex = 25;
             this.checkBoxTempRetain.Text = "Try to retain GPU temperature at";
             this.checkBoxTempRetain.UseVisualStyleBackColor = true;
             // 
@@ -718,7 +718,7 @@
             0});
             this.numericUpDownTempAbort.Name = "numericUpDownTempAbort";
             this.numericUpDownTempAbort.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDownTempAbort.TabIndex = 26;
+            this.numericUpDownTempAbort.TabIndex = 24;
             // 
             // labelCelsius
             // 
@@ -735,7 +735,7 @@
             this.checkBoxTempAbort.Location = new System.Drawing.Point(16, 145);
             this.checkBoxTempAbort.Name = "checkBoxTempAbort";
             this.checkBoxTempAbort.Size = new System.Drawing.Size(223, 17);
-            this.checkBoxTempAbort.TabIndex = 24;
+            this.checkBoxTempAbort.TabIndex = 23;
             this.checkBoxTempAbort.Text = "Abort session if GPU temperature reaches";
             this.checkBoxTempAbort.UseVisualStyleBackColor = true;
             // 
@@ -745,7 +745,7 @@
             this.checkBoxDisableTemp.Location = new System.Drawing.Point(16, 120);
             this.checkBoxDisableTemp.Name = "checkBoxDisableTemp";
             this.checkBoxDisableTemp.Size = new System.Drawing.Size(289, 17);
-            this.checkBoxDisableTemp.TabIndex = 23;
+            this.checkBoxDisableTemp.TabIndex = 22;
             this.checkBoxDisableTemp.Text = "Disable temperature and fanspeed readings and triggers";
             this.checkBoxDisableTemp.UseVisualStyleBackColor = true;
             // 
@@ -764,7 +764,7 @@
             0});
             this.numericUpDownWorkloadFineTuning.Name = "numericUpDownWorkloadFineTuning";
             this.numericUpDownWorkloadFineTuning.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDownWorkloadFineTuning.TabIndex = 22;
+            this.numericUpDownWorkloadFineTuning.TabIndex = 21;
             this.numericUpDownWorkloadFineTuning.Value = new decimal(new int[] {
             8,
             0,
@@ -777,7 +777,7 @@
             this.checkBoxWorkloadFineTuning.Location = new System.Drawing.Point(16, 95);
             this.checkBoxWorkloadFineTuning.Name = "checkBoxWorkloadFineTuning";
             this.checkBoxWorkloadFineTuning.Size = new System.Drawing.Size(127, 17);
-            this.checkBoxWorkloadFineTuning.TabIndex = 21;
+            this.checkBoxWorkloadFineTuning.TabIndex = 20;
             this.checkBoxWorkloadFineTuning.Text = "Workload fine-tuning:";
             this.checkBoxWorkloadFineTuning.UseVisualStyleBackColor = true;
             // 
@@ -793,7 +793,7 @@
             this.comboBoxWorkloadTuning.Location = new System.Drawing.Point(166, 68);
             this.comboBoxWorkloadTuning.Name = "comboBoxWorkloadTuning";
             this.comboBoxWorkloadTuning.Size = new System.Drawing.Size(73, 21);
-            this.comboBoxWorkloadTuning.TabIndex = 20;
+            this.comboBoxWorkloadTuning.TabIndex = 19;
             // 
             // checkBoxWorkloadTuning
             // 
@@ -801,7 +801,7 @@
             this.checkBoxWorkloadTuning.Location = new System.Drawing.Point(16, 70);
             this.checkBoxWorkloadTuning.Name = "checkBoxWorkloadTuning";
             this.checkBoxWorkloadTuning.Size = new System.Drawing.Size(107, 17);
-            this.checkBoxWorkloadTuning.TabIndex = 19;
+            this.checkBoxWorkloadTuning.TabIndex = 18;
             this.checkBoxWorkloadTuning.Text = "Workload tuning:";
             this.checkBoxWorkloadTuning.UseVisualStyleBackColor = true;
             // 
@@ -815,7 +815,7 @@
             this.comboBoxWorkloadProfile.Location = new System.Drawing.Point(166, 43);
             this.comboBoxWorkloadProfile.Name = "comboBoxWorkloadProfile";
             this.comboBoxWorkloadProfile.Size = new System.Drawing.Size(158, 21);
-            this.comboBoxWorkloadProfile.TabIndex = 18;
+            this.comboBoxWorkloadProfile.TabIndex = 17;
             // 
             // checkBox1
             // 
@@ -823,7 +823,7 @@
             this.checkBox1.Location = new System.Drawing.Point(16, 45);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(144, 17);
-            this.checkBox1.TabIndex = 1;
+            this.checkBox1.TabIndex = 16;
             this.checkBox1.Text = "Specific workload profile:";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -833,7 +833,7 @@
             this.checkBoxGPUAsync.Location = new System.Drawing.Point(16, 19);
             this.checkBoxGPUAsync.Name = "checkBoxGPUAsync";
             this.checkBoxGPUAsync.Size = new System.Drawing.Size(210, 17);
-            this.checkBoxGPUAsync.TabIndex = 0;
+            this.checkBoxGPUAsync.TabIndex = 15;
             this.checkBoxGPUAsync.Text = "Use non-blocking async calls (NV only)";
             this.checkBoxGPUAsync.UseVisualStyleBackColor = true;
             // 
@@ -845,7 +845,7 @@
             this.groupBoxActions.Location = new System.Drawing.Point(456, 12);
             this.groupBoxActions.Name = "groupBoxActions";
             this.groupBoxActions.Size = new System.Drawing.Size(186, 79);
-            this.groupBoxActions.TabIndex = 19;
+            this.groupBoxActions.TabIndex = 6;
             this.groupBoxActions.TabStop = false;
             this.groupBoxActions.Text = "Actions";
             // 
@@ -856,7 +856,7 @@
             this.buttonCancelTask.Name = "buttonCancelTask";
             this.buttonCancelTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonCancelTask.Size = new System.Drawing.Size(40, 32);
-            this.buttonCancelTask.TabIndex = 20;
+            this.buttonCancelTask.TabIndex = 44;
             this.buttonCancelTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancelTask.UseVisualStyleBackColor = true;
             // 
@@ -867,7 +867,7 @@
             this.buttonSubmitTask.Name = "buttonSubmitTask";
             this.buttonSubmitTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonSubmitTask.Size = new System.Drawing.Size(40, 32);
-            this.buttonSubmitTask.TabIndex = 19;
+            this.buttonSubmitTask.TabIndex = 42;
             this.buttonSubmitTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSubmitTask.UseVisualStyleBackColor = true;
             // 
@@ -878,7 +878,7 @@
             this.buttonClearTask.Name = "buttonClearTask";
             this.buttonClearTask.Padding = new System.Windows.Forms.Padding(3);
             this.buttonClearTask.Size = new System.Drawing.Size(40, 32);
-            this.buttonClearTask.TabIndex = 18;
+            this.buttonClearTask.TabIndex = 43;
             this.buttonClearTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClearTask.UseVisualStyleBackColor = true;
             // 
@@ -892,15 +892,15 @@
             this.Controls.Add(this.groupBoxOutput);
             this.Controls.Add(this.groupBoxOptions);
             this.Controls.Add(this.groupBoxIncrement);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxHash);
             this.Controls.Add(this.groupBoxAttackType);
             this.Name = "TaskEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LeukocyteGUI for oclHashCat - Task Editor";
             this.groupBoxAttackType.ResumeLayout(false);
             this.groupBoxAttackType.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxHash.ResumeLayout(false);
+            this.groupBoxHash.PerformLayout();
             this.groupBoxIncrement.ResumeLayout(false);
             this.groupBoxIncrement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIncrementMax)).EndInit();
@@ -935,7 +935,7 @@
         private System.Windows.Forms.TextBox textBoxCharset2;
         private System.Windows.Forms.CheckBox checkBoxCharset1;
         private System.Windows.Forms.TextBox textBoxCharset1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxHash;
         private System.Windows.Forms.ComboBox comboBoxHashType;
         private System.Windows.Forms.Label labelHashType;
         private System.Windows.Forms.Label labelHashFile;

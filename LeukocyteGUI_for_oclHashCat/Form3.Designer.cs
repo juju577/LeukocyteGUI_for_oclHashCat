@@ -35,6 +35,7 @@
             "c:\\users\\file.hash.found",
             "C:\\dictionaries\\dic1.txt",
             "9/10",
+            "6/10",
             "94.34%",
             "2/10",
             "Cracking",
@@ -47,14 +48,15 @@
             this.columnHeaderNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHashType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHashFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderOutput = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDictionary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCracked = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderEstimated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStarted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFinished = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderEstimated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSession = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonOpenConverter = new System.Windows.Forms.Button();
             this.buttonClearTask = new System.Windows.Forms.Button();
@@ -66,7 +68,6 @@
             this.buttonUpTask = new System.Windows.Forms.Button();
             this.buttonDeleteTask = new System.Windows.Forms.Button();
             this.buttonAddTask = new System.Windows.Forms.Button();
-            this.columnHeaderOutput = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelOclHashcat = new System.Windows.Forms.Label();
             this.groupBoxMainSettings = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,6 +80,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBoxGPUStatistics = new System.Windows.Forms.GroupBox();
             this.groupBoxActions = new System.Windows.Forms.GroupBox();
+            this.columnHeaderLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxMainSettings.SuspendLayout();
             this.groupBoxGPUStatistics.SuspendLayout();
             this.groupBoxActions.SuspendLayout();
@@ -104,6 +106,7 @@
             this.columnHeaderOutput,
             this.columnHeaderDictionary,
             this.columnHeaderHash,
+            this.columnHeaderLength,
             this.columnHeaderProgress,
             this.columnHeaderCracked,
             this.columnHeaderStatus,
@@ -137,12 +140,17 @@
             // columnHeaderHashFile
             // 
             this.columnHeaderHashFile.Text = "Hash File";
-            this.columnHeaderHashFile.Width = 98;
+            this.columnHeaderHashFile.Width = 89;
+            // 
+            // columnHeaderOutput
+            // 
+            this.columnHeaderOutput.Text = "Output File";
+            this.columnHeaderOutput.Width = 116;
             // 
             // columnHeaderDictionary
             // 
             this.columnHeaderDictionary.Text = "Dictionary / Mask";
-            this.columnHeaderDictionary.Width = 124;
+            this.columnHeaderDictionary.Width = 102;
             // 
             // columnHeaderHash
             // 
@@ -163,6 +171,11 @@
             this.columnHeaderStatus.Text = "Status";
             this.columnHeaderStatus.Width = 56;
             // 
+            // columnHeaderEstimated
+            // 
+            this.columnHeaderEstimated.Text = "Estimated";
+            this.columnHeaderEstimated.Width = 68;
+            // 
             // columnHeaderStarted
             // 
             this.columnHeaderStarted.Text = "Started";
@@ -172,11 +185,6 @@
             // 
             this.columnHeaderFinished.Text = "Finished";
             this.columnHeaderFinished.Width = 109;
-            // 
-            // columnHeaderEstimated
-            // 
-            this.columnHeaderEstimated.Text = "Estimated";
-            this.columnHeaderEstimated.Width = 68;
             // 
             // columnHeaderSession
             // 
@@ -293,11 +301,6 @@
             this.buttonAddTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAddTask.UseVisualStyleBackColor = true;
             this.buttonAddTask.Click += new System.EventHandler(this.buttonAddTask_Click);
-            // 
-            // columnHeaderOutput
-            // 
-            this.columnHeaderOutput.Text = "Output File";
-            this.columnHeaderOutput.Width = 131;
             // 
             // labelOclHashcat
             // 
@@ -437,6 +440,10 @@
             this.groupBoxActions.TabStop = false;
             this.groupBoxActions.Text = "Actions";
             // 
+            // columnHeaderLength
+            // 
+            this.columnHeaderLength.Text = "Length";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,5 +503,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBoxGPUStatistics;
         private System.Windows.Forms.GroupBox groupBoxActions;
+        private System.Windows.Forms.ColumnHeader columnHeaderLength;
     }
 }
