@@ -65,6 +65,49 @@ namespace LeukocyteGUI_for_oclHashCat
             CrackTasks = new CrackTask[0];
         }
 
+        public int AddTask(int Index)
+        {
+            if (Index > -1)
+            {
+                Array.Resize<CrackTask>(ref CrackTasks, CrackTasks.Length + 1);
+
+                if (Index != CrackTasks.Length - 1)
+                {
+                    for (int i = CrackTasks.Length - 1; i > Index; i--)
+                    {
+                        CrackTasks[i] = CrackTasks[i - 1];
+                    }
+                }
+            }
+
+            return CrackTasks.Length;
+        }
+
+        public int AddTask()
+        {
+            return AddTask(CrackTasks.Length);
+        }
+
+        public int DeleteTask(int Index)
+        {
+            if ((Index < CrackTasks.Length) && (Index > -1))
+            {
+                for (int i = Index; i < CrackTasks.Length - 1; i++)
+                {
+                    CrackTasks[i] = CrackTasks[i + 1];
+                }
+            }
+
+            Array.Resize<CrackTask>(ref CrackTasks, CrackTasks.Length - 1);
+
+            return CrackTasks.Length;
+        }
+
+        public int DeleteLastTask()
+        {
+            return DeleteTask(CrackTasks.Length - 1);
+        }
+
         class CrackTask
         {
             private string HashFileName, HashTypeName, BruteforceMask, Separator,
@@ -287,6 +330,22 @@ namespace LeukocyteGUI_for_oclHashCat
             {
                 this.AttackType = AttackType;
                 return true;
+            }
+
+            public string GetHashcatParams()
+            {
+                string result = "";
+
+                result
+                    += " --hash-type="      + AttackType.ToString()
+                     + " --attack-mode="    + HashTypeCode.ToString()
+                     + " --session="        + SessionId
+                     + " --status"
+                     + " --status-timer="   + "2"
+                     + " --outfile="        + OutputFileName
+                     + " --outfile-format=" + OutputFormatCode.ToString();
+
+                return result;
             }
         }
     }
