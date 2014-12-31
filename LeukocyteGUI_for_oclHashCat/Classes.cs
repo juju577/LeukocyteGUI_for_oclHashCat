@@ -108,6 +108,38 @@ namespace LeukocyteGUI_for_oclHashCat
             return DeleteTask(CrackTasks.Length - 1);
         }
 
+        public int TaskMoveUp(int Index)
+        {
+            int result = Index;
+
+            if ((Index > 0) && (Index < CrackTasks.Length))
+            {
+                CrackTask buffer = CrackTasks[Index];
+
+                CrackTasks[Index] = CrackTasks[Index - 1];
+                CrackTasks[Index - 1] = buffer;
+                result = Index - 1;
+            }
+
+            return result;
+        }
+
+        public int TaskMoveDown(int Index)
+        {
+            int result = Index;
+
+            if ((Index > -1) && (Index < CrackTasks.Length - 1))
+            {
+                CrackTask buffer = CrackTasks[Index];
+
+                CrackTasks[Index] = CrackTasks[Index + 1];
+                CrackTasks[Index + 1] = buffer;
+                result = Index + 1;
+            }
+
+            return result;
+        }
+
         class CrackTask
         {
             private string HashFileName, HashTypeName, BruteforceMask, Separator,
@@ -337,13 +369,134 @@ namespace LeukocyteGUI_for_oclHashCat
                 string result = "";
 
                 result
-                    += " --hash-type="      + AttackType.ToString()
-                     + " --attack-mode="    + HashTypeCode.ToString()
-                     + " --session="        + SessionId
-                     + " --status"
-                     + " --status-timer="   + "2"
-                     + " --outfile="        + OutputFileName
-                     + " --outfile-format=" + OutputFormatCode.ToString();
+                   += " --hash-type="      + AttackType.ToString()
+                    + " --attack-mode="    + HashTypeCode.ToString()
+                    + " --session="        + SessionId
+                    + " --status"
+                    + " --status-timer="   + "2"
+                    + " --outfile="        + OutputFileName
+                    + " --outfile-format=" + OutputFormatCode.ToString()
+                    + " --separator="      + Separator;
+
+                if (UseCharset1)
+                {
+                    result += " --custom-charset1=" + Charset1;
+                }
+
+                if (UseCharset2)
+                {
+                    result += " --custom-charset1=" + Charset2;
+                }
+
+                if (UseCharset3)
+                {
+                    result += " --custom-charset1=" + Charset3;
+                }
+
+                if (UseCharset4)
+                {
+                    result += " --custom-charset1=" + Charset4;
+                }
+
+                if (EnableIncrementMode)
+                {
+                    result
+                        += " --increment"
+                         + " --increment-min=" + StartLength
+                         + " --increment-max=" + MaxLength;
+                }
+
+                if (EnableGPUAsync)
+                {
+                    result += " --gpu-async";
+                }
+
+                if (EnableSpecificWorkloadProfile)
+                {
+                    result += " --workload-profile=" + WorkloadProfileCode.ToString();
+                }
+
+                if (EnableWorkloadTuning)
+                {
+                    result += " --gpu-accel=" + WorkloadTuning.ToString();
+                }
+
+                if (EnableWorkloadFineTuning)
+                {
+                    result += " --gpu-loops" + WorkloadFineTuning.ToString();
+                }
+
+                if (DisableTempReading)
+                {
+                    result += " --gpu-temp-disable";
+                }
+
+                if (AbortSessionIfReachesMaxTemp)
+                {
+                    result += " --gpu-temp-abort=" + AbortTemp.ToString();
+                }
+
+                if (TryToRetain)
+                {
+                    result += " --gpu-temp-retain=" + RetainTemp.ToString();
+                }
+
+                if (DisableAutoPowertuning)
+                {
+                    result += " --powertune-disable";
+                }
+
+                if (CharsetIsInHex)
+                {
+                    result += " --hex-charset";
+                }
+
+                if (SaltIsInHex)
+                {
+                    result += " --hex-salt";
+                }
+
+                if (SaltIsInHex)
+                {
+                    result += " --force";
+                }
+
+                if (EnableLoopback)
+                {
+                    result += " --loopback";
+                }
+
+                if (IgnoreUsernames)
+                {
+                    result += " --username";
+                }
+
+                if (RemoveCrackedHashes)
+                {
+                    result += " --remove";
+                }
+
+                if (DisablePotfile)
+                {
+                    result += " --potfile-disable";
+                }
+
+                if (DisableLogfile)
+                {
+                    result += " --logfile-disable";
+                }
+
+                result += " " + HashFileName;
+
+                switch (AttackType)
+                {
+                    case 0:
+                        result += " " + Dictionary;
+                        break;
+                    case 3:
+                        result += " " + BruteforceMask;
+                        break;
+                }
 
                 return result;
             }
