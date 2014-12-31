@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxHashcat = new System.Windows.Forms.TextBox();
+            this.textBoxHashFileName = new System.Windows.Forms.TextBox();
             this.radioButtonAttackTypeBrute = new System.Windows.Forms.RadioButton();
             this.radioButtonAttackTypeDictionary = new System.Windows.Forms.RadioButton();
             this.groupBoxAttackType = new System.Windows.Forms.GroupBox();
@@ -104,12 +104,12 @@
             this.groupBoxActions.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxHashcat
+            // textBoxHashFileName
             // 
-            this.textBoxHashcat.Location = new System.Drawing.Point(77, 19);
-            this.textBoxHashcat.Name = "textBoxHashcat";
-            this.textBoxHashcat.Size = new System.Drawing.Size(225, 20);
-            this.textBoxHashcat.TabIndex = 0;
+            this.textBoxHashFileName.Location = new System.Drawing.Point(77, 19);
+            this.textBoxHashFileName.Name = "textBoxHashFileName";
+            this.textBoxHashFileName.Size = new System.Drawing.Size(225, 20);
+            this.textBoxHashFileName.TabIndex = 0;
             // 
             // radioButtonAttackTypeBrute
             // 
@@ -243,7 +243,7 @@
             this.groupBoxHash.Controls.Add(this.comboBoxHashType);
             this.groupBoxHash.Controls.Add(this.labelHashType);
             this.groupBoxHash.Controls.Add(this.labelHashFile);
-            this.groupBoxHash.Controls.Add(this.textBoxHashcat);
+            this.groupBoxHash.Controls.Add(this.textBoxHashFileName);
             this.groupBoxHash.Location = new System.Drawing.Point(13, 12);
             this.groupBoxHash.Name = "groupBoxHash";
             this.groupBoxHash.Size = new System.Drawing.Size(433, 79);
@@ -870,6 +870,7 @@
             this.buttonSubmitTask.TabIndex = 42;
             this.buttonSubmitTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSubmitTask.UseVisualStyleBackColor = true;
+            this.buttonSubmitTask.Click += new System.EventHandler(this.buttonSubmitTask_Click);
             // 
             // buttonClearTask
             // 
@@ -921,7 +922,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxHashcat;
+        private System.Windows.Forms.TextBox textBoxHashFileName;
         private System.Windows.Forms.RadioButton radioButtonAttackTypeBrute;
         private System.Windows.Forms.RadioButton radioButtonAttackTypeDictionary;
         private System.Windows.Forms.GroupBox groupBoxAttackType;

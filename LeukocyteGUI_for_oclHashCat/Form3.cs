@@ -12,14 +12,17 @@ namespace LeukocyteGUI_for_oclHashCat
 {
     public partial class MainForm : Form
     {
+        CrackTaskManager tskManager;
+
         public MainForm()
         {
             InitializeComponent();
+            tskManager = new CrackTaskManager();
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)
         {
-            TaskEditorForm TaskEditor = new TaskEditorForm();
+            TaskEditorForm TaskEditor = new TaskEditorForm(ref tskManager);
             TaskEditor.ShowDialog(this);
         }
 
@@ -27,6 +30,19 @@ namespace LeukocyteGUI_for_oclHashCat
         {
             ConverterForm Converter = new ConverterForm();
             Converter.ShowDialog(this);
+        }
+
+        public CrackTaskManager MainCrackTaskManager
+        {
+            get
+            {
+                return tskManager;
+            }
+
+            set
+            {
+                tskManager = value;
+            }
         }
     }
 }

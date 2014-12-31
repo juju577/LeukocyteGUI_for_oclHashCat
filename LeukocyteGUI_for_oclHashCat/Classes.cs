@@ -78,6 +78,8 @@ namespace LeukocyteGUI_for_oclHashCat
                         CrackTasks[i] = CrackTasks[i - 1];
                     }
                 }
+
+                CrackTasks[Index] = new CrackTask();
             }
 
             return CrackTasks.Length;
@@ -140,7 +142,7 @@ namespace LeukocyteGUI_for_oclHashCat
             return result;
         }
 
-        class CrackTask
+        public class CrackTask
         {
             private string HashFileName, HashTypeName, BruteforceMask, Separator,
                 Charset1, Charset2, Charset3, Charset4, Dictionary, OutputFileName,
