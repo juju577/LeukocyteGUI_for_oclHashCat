@@ -898,6 +898,7 @@
             this.Name = "TaskEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LeukocyteGUI for oclHashCat - Task Editor";
+            this.Load += new System.EventHandler(this.TaskEditorForm_Load);
             this.groupBoxAttackType.ResumeLayout(false);
             this.groupBoxAttackType.PerformLayout();
             this.groupBoxHash.ResumeLayout(false);

@@ -14,25 +14,29 @@ namespace LeukocyteGUI_for_oclHashCat
     {
         CrackTaskManager MainCrackTaskManager;
 
-        public TaskEditorForm(ref CrackTaskManager tskManager)
+        public TaskEditorForm()
         {
             InitializeComponent();
-            MainCrackTaskManager = tskManager;
         }
 
         private void buttonSubmitTask_Click(object sender, EventArgs e)
         {
             int TaskId;
+            string[] Data;
 
             TaskId = MainCrackTaskManager.AddTask();
 
             if (!MainCrackTaskManager.CrackTasks[TaskId].SetHashFileName(textBoxHashFileName.Text, true))
             {
+                MainCrackTaskManager.DeleteTask(TaskId);
                 return;
             }
 
             MainCrackTaskManager.CrackTasks[TaskId].SetSeparator(textBoxSeparator.Text);
-            MainCrackTaskManager.CrackTasks[TaskId].SetHashTypeCode(int.Parse(comboBoxHashType.Text.Split('=')[0].Trim()));
+
+            Data = comboBoxHashType.Text.Split('=');
+            MainCrackTaskManager.CrackTasks[TaskId].SetHashTypeCode(int.Parse(Data[0].Trim()));
+            MainCrackTaskManager.CrackTasks[TaskId].SetHashTypeName(Data[1].Trim());
 
             if (radioButtonAttackTypeBrute.Checked)
             {
@@ -74,7 +78,9 @@ namespace LeukocyteGUI_for_oclHashCat
             if (checkBoxSpecificWorkloadProfile.Checked)
             {
                 MainCrackTaskManager.CrackTasks[TaskId].EnableSpecificWorkloadProfile = true;
-                MainCrackTaskManager.CrackTasks[TaskId].SetWorkloadProfileCode(byte.Parse(comboBoxWorkloadProfile.Text.Split('=')[0].Trim()));
+                Data = comboBoxWorkloadProfile.Text.Split('=');
+                MainCrackTaskManager.CrackTasks[TaskId].SetWorkloadProfileCode(byte.Parse(Data[0].Trim()));
+                MainCrackTaskManager.CrackTasks[TaskId].SetWorkloadProfileName(Data[1].Trim());
             }
 
             if (checkBoxWorkloadTuning.Checked)
@@ -112,8 +118,27 @@ namespace LeukocyteGUI_for_oclHashCat
 
             if (!MainCrackTaskManager.CrackTasks[TaskId].SetOutputFileName(textBoxOutputFile.Text, true))
             {
+                MainCrackTaskManager.DeleteTask(TaskId);
                 return;
             }
+
+            Data = comboBoxOutputFormat.Text.Split('=');
+            MainCrackTaskManager.CrackTasks[TaskId].SetOutputFormatCode(byte.Parse(Data[0].Trim()));
+            MainCrackTaskManager.CrackTasks[TaskId].SetOutputFormatName(Data[1].Trim());
+            MainCrackTaskManager.CrackTasks[TaskId].SetSessionId(textBoxSessionId.Text);
+            MainCrackTaskManager.CrackTasks[TaskId].CharsetIsInHex = checkBoxCharsetIsInHex.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].SaltIsInHex = checkBoxSaltIsInHex.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].IgnoreWarnings = checkBoxIgnoreWarnings.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].EnableLoopback = checkBoxLoopback.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].IgnoreUsernames = checkBoxIgnoreUsernames.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].RemoveCrackedHashes = checkBoxRemoveCracked.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].DisablePotfile = checkBoxDisablePot.Enabled;
+            MainCrackTaskManager.CrackTasks[TaskId].DisableLogfile = checkBoxDisableLog.Enabled;
+        }
+
+        private void TaskEditorForm_Load(object sender, EventArgs e)
+        {
+            MainCrackTaskManager = (this.Owner as MainForm).MainCrackTaskManager;
         }
     }
 }

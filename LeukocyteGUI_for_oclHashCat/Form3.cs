@@ -22,7 +22,8 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void buttonAddTask_Click(object sender, EventArgs e)
         {
-            TaskEditorForm TaskEditor = new TaskEditorForm(ref tskManager);
+            TaskEditorForm TaskEditor = new TaskEditorForm();
+            TaskEditor.Owner = this;
             TaskEditor.ShowDialog(this);
         }
 
