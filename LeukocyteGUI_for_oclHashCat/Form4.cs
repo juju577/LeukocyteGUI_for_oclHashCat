@@ -13,10 +13,16 @@ namespace LeukocyteGUI_for_oclHashCat
     public partial class TaskEditorForm : Form
     {
         CrackTaskManager MainCrackTaskManager;
+        int ChangingTaskId = -1;
 
         public TaskEditorForm()
         {
             InitializeComponent();
+        }
+
+        public TaskEditorForm(int ChangingTaskId) : this()
+        {
+            this.ChangingTaskId = ChangingTaskId;
         }
 
         private void buttonSubmitTask_Click(object sender, EventArgs e)
@@ -24,7 +30,14 @@ namespace LeukocyteGUI_for_oclHashCat
             int TaskId;
             string[] Data;
 
-            TaskId = MainCrackTaskManager.AddTask();
+            if (ChangingTaskId > -1)
+            {
+                TaskId = ChangingTaskId;
+            }
+            else
+            {
+                TaskId = MainCrackTaskManager.AddTask();
+            }
 
             if (!MainCrackTaskManager.CrackTasks[TaskId].SetHashFileName(textBoxHashFileName.Text, true))
             {
@@ -144,10 +157,19 @@ namespace LeukocyteGUI_for_oclHashCat
         private void TaskEditorForm_Load(object sender, EventArgs e)
         {
             MainCrackTaskManager = (this.Owner as MainForm).MainCrackTaskManager;
-            comboBoxHashType.SelectedIndex = 0;
-            comboBoxOutputFormat.SelectedIndex = 0;
-            comboBoxWorkloadProfile.SelectedIndex = 0;
-            comboBoxWorkloadTuning.SelectedIndex = 0;
+
+            if (ChangingTaskId == -1)
+            {
+                comboBoxHashType.SelectedIndex = 0;
+                comboBoxOutputFormat.SelectedIndex = 0;
+                comboBoxWorkloadProfile.SelectedIndex = 0;
+                comboBoxWorkloadTuning.SelectedIndex = 0;
+                textBoxSessionId.Text = DateTime.Now.ToString("yyyyMMddHHmmss");
+            }
+            else
+            {
+                //todo
+            }
         }
     }
 }
