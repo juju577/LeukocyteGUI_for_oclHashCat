@@ -155,31 +155,39 @@ namespace LeukocyteGUI_for_oclHashCat
                 EnableWorkloadTuning, EnableWorkloadFineTuning, DisableTempReading,
                 AbortSessionIfReachesMaxTemp, TryToRetain, DisableAutoPowertuning,
                 CharsetIsInHex, SaltIsInHex, IgnoreWarnings, EnableLoopback,
-                IgnoreUsernames, RemoveCrackedHashes, DisablePotfile, DisableLogfile;
+                IgnoreUsernames, RemoveCrackedHashes, DisablePotfile, DisableLogfile,
+                OutputToFile;
 
             public bool SetHashFileName(string HashFileName, bool ShowErrorMessages = false)
             {
                 bool result = false;
 
-                if (System.IO.File.Exists(HashFileName))
+                if (HashFileName.Contains('.') || HashFileName.Contains('/') || HashFileName.Contains(@"\"))
                 {
-                    result = true;
+                    if (System.IO.File.Exists(HashFileName))
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        if (ShowErrorMessages)
+                        {
+                            if (MessageBox.Show("Hash file does not exist. Continue anyway?",
+                                "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                result = true;
+                            }
+                        }
+                    }
+
+                    if (result)
+                    {
+                        this.HashFileName = HashFileName;
+                    }
                 }
                 else
                 {
-                    if (ShowErrorMessages)
-                    {
-                        if (MessageBox.Show("Hash file does not exist. Continue anyway?",
-                            "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            result = true;
-                        }
-                    }
-                }
-
-                if (result)
-                {
-                    this.HashFileName = HashFileName;
+                    result = true;
                 }
 
                 return result;   
@@ -258,28 +266,36 @@ namespace LeukocyteGUI_for_oclHashCat
             public bool SetOutputFileName(string OutputFileName, bool ShowErrorMessages = false)
             {
                 bool result = false;
-                string OutputDirectoryName = System.IO.Path.GetDirectoryName(OutputFileName);
 
-                if (System.IO.Directory.Exists(OutputDirectoryName))
+                if (OutputFileName == "")
                 {
-                    result = true;
+                    MessageBox.Show("Output file name cannot be empty", "Error");
                 }
                 else
                 {
-                    if (ShowErrorMessages)
-                    {
-                        if (MessageBox.Show("Output directory does not exist. Create it?",
-                            "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            System.IO.Directory.CreateDirectory(OutputDirectoryName).Create();
+                    string OutputDirectoryName = System.IO.Path.GetDirectoryName(OutputFileName);
 
-                            if (System.IO.Directory.Exists(OutputDirectoryName))
+                    if (System.IO.Directory.Exists(OutputDirectoryName))
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        if (ShowErrorMessages)
+                        {
+                            if (MessageBox.Show("Output directory does not exist. Create it?",
+                                "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                result = true;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Failed to create output directory", "Error");
+                                System.IO.Directory.CreateDirectory(OutputDirectoryName).Create();
+
+                                if (System.IO.Directory.Exists(OutputDirectoryName))
+                                {
+                                    result = true;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Failed to create output directory", "Error");
+                                }
                             }
                         }
                     }
@@ -376,9 +392,14 @@ namespace LeukocyteGUI_for_oclHashCat
                     + " --session="        + SessionId
                     + " --status"
                     + " --status-timer="   + "2"
-                    + " --outfile="        + OutputFileName
-                    + " --outfile-format=" + OutputFormatCode.ToString()
                     + " --separator="      + Separator;
+
+                if (OutputToFile)
+                {
+                    result
+                        += " --outfile="        + OutputFileName
+                         + " --outfile-format=" + OutputFormatCode.ToString();
+                }
 
                 if (UseCharset1)
                 {

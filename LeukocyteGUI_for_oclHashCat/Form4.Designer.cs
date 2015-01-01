@@ -90,6 +90,7 @@
             this.buttonCancelTask = new System.Windows.Forms.Button();
             this.buttonSubmitTask = new System.Windows.Forms.Button();
             this.buttonClearTask = new System.Windows.Forms.Button();
+            this.checkBoxOutputToFile = new System.Windows.Forms.CheckBox();
             this.groupBoxAttackType.SuspendLayout();
             this.groupBoxHash.SuspendLayout();
             this.groupBoxIncrement.SuspendLayout();
@@ -106,9 +107,9 @@
             // 
             // textBoxHashFileName
             // 
-            this.textBoxHashFileName.Location = new System.Drawing.Point(77, 19);
+            this.textBoxHashFileName.Location = new System.Drawing.Point(101, 19);
             this.textBoxHashFileName.Name = "textBoxHashFileName";
-            this.textBoxHashFileName.Size = new System.Drawing.Size(225, 20);
+            this.textBoxHashFileName.Size = new System.Drawing.Size(201, 20);
             this.textBoxHashFileName.TabIndex = 0;
             // 
             // radioButtonAttackTypeBrute
@@ -126,7 +127,7 @@
             // radioButtonAttackTypeDictionary
             // 
             this.radioButtonAttackTypeDictionary.AutoSize = true;
-            this.radioButtonAttackTypeDictionary.Location = new System.Drawing.Point(16, 163);
+            this.radioButtonAttackTypeDictionary.Location = new System.Drawing.Point(16, 179);
             this.radioButtonAttackTypeDictionary.Name = "radioButtonAttackTypeDictionary";
             this.radioButtonAttackTypeDictionary.Size = new System.Drawing.Size(108, 17);
             this.radioButtonAttackTypeDictionary.TabIndex = 13;
@@ -149,7 +150,7 @@
             this.groupBoxAttackType.Controls.Add(this.radioButtonAttackTypeDictionary);
             this.groupBoxAttackType.Location = new System.Drawing.Point(13, 97);
             this.groupBoxAttackType.Name = "groupBoxAttackType";
-            this.groupBoxAttackType.Size = new System.Drawing.Size(345, 196);
+            this.groupBoxAttackType.Size = new System.Drawing.Size(345, 218);
             this.groupBoxAttackType.TabIndex = 1;
             this.groupBoxAttackType.TabStop = false;
             this.groupBoxAttackType.Text = "Attack type";
@@ -157,7 +158,7 @@
             // checkBoxCharset4
             // 
             this.checkBoxCharset4.AutoSize = true;
-            this.checkBoxCharset4.Location = new System.Drawing.Point(30, 132);
+            this.checkBoxCharset4.Location = new System.Drawing.Point(30, 141);
             this.checkBoxCharset4.Name = "checkBoxCharset4";
             this.checkBoxCharset4.Size = new System.Drawing.Size(74, 17);
             this.checkBoxCharset4.TabIndex = 11;
@@ -166,7 +167,7 @@
             // 
             // textBoxCharset4
             // 
-            this.textBoxCharset4.Location = new System.Drawing.Point(110, 130);
+            this.textBoxCharset4.Location = new System.Drawing.Point(110, 139);
             this.textBoxCharset4.Name = "textBoxCharset4";
             this.textBoxCharset4.Size = new System.Drawing.Size(192, 20);
             this.textBoxCharset4.TabIndex = 12;
@@ -174,7 +175,7 @@
             // checkBoxCharset3
             // 
             this.checkBoxCharset3.AutoSize = true;
-            this.checkBoxCharset3.Location = new System.Drawing.Point(30, 106);
+            this.checkBoxCharset3.Location = new System.Drawing.Point(30, 112);
             this.checkBoxCharset3.Name = "checkBoxCharset3";
             this.checkBoxCharset3.Size = new System.Drawing.Size(74, 17);
             this.checkBoxCharset3.TabIndex = 9;
@@ -183,7 +184,7 @@
             // 
             // textBoxCharset3
             // 
-            this.textBoxCharset3.Location = new System.Drawing.Point(110, 104);
+            this.textBoxCharset3.Location = new System.Drawing.Point(110, 110);
             this.textBoxCharset3.Name = "textBoxCharset3";
             this.textBoxCharset3.Size = new System.Drawing.Size(192, 20);
             this.textBoxCharset3.TabIndex = 10;
@@ -191,7 +192,7 @@
             // checkBoxCharset2
             // 
             this.checkBoxCharset2.AutoSize = true;
-            this.checkBoxCharset2.Location = new System.Drawing.Point(30, 80);
+            this.checkBoxCharset2.Location = new System.Drawing.Point(30, 83);
             this.checkBoxCharset2.Name = "checkBoxCharset2";
             this.checkBoxCharset2.Size = new System.Drawing.Size(74, 17);
             this.checkBoxCharset2.TabIndex = 7;
@@ -200,7 +201,7 @@
             // 
             // textBoxCharset2
             // 
-            this.textBoxCharset2.Location = new System.Drawing.Point(110, 78);
+            this.textBoxCharset2.Location = new System.Drawing.Point(110, 81);
             this.textBoxCharset2.Name = "textBoxCharset2";
             this.textBoxCharset2.Size = new System.Drawing.Size(192, 20);
             this.textBoxCharset2.TabIndex = 8;
@@ -224,7 +225,7 @@
             // 
             // textBoxDictionary
             // 
-            this.textBoxDictionary.Location = new System.Drawing.Point(138, 162);
+            this.textBoxDictionary.Location = new System.Drawing.Point(138, 178);
             this.textBoxDictionary.Name = "textBoxDictionary";
             this.textBoxDictionary.Size = new System.Drawing.Size(186, 20);
             this.textBoxDictionary.TabIndex = 14;
@@ -387,9 +388,9 @@
             "2711 = vBulletin > v3.8.5",
             "2811 = IPB2+, MyBB1.2+",
             "3711 = Mediawiki B type"});
-            this.comboBoxHashType.Location = new System.Drawing.Point(77, 46);
+            this.comboBoxHashType.Location = new System.Drawing.Point(101, 46);
             this.comboBoxHashType.Name = "comboBoxHashType";
-            this.comboBoxHashType.Size = new System.Drawing.Size(339, 21);
+            this.comboBoxHashType.Size = new System.Drawing.Size(315, 21);
             this.comboBoxHashType.TabIndex = 2;
             // 
             // labelHashType
@@ -406,9 +407,9 @@
             this.labelHashFile.AutoSize = true;
             this.labelHashFile.Location = new System.Drawing.Point(13, 22);
             this.labelHashFile.Name = "labelHashFile";
-            this.labelHashFile.Size = new System.Drawing.Size(51, 13);
+            this.labelHashFile.Size = new System.Drawing.Size(82, 13);
             this.labelHashFile.TabIndex = 11;
-            this.labelHashFile.Text = "Hash file:";
+            this.labelHashFile.Text = "Hash / hashfile:";
             // 
             // groupBoxIncrement
             // 
@@ -478,7 +479,7 @@
             this.groupBoxOptions.Controls.Add(this.checkBoxIgnoreWarnings);
             this.groupBoxOptions.Controls.Add(this.checkBoxSaltIsInHex);
             this.groupBoxOptions.Controls.Add(this.checkBoxCharsetIsInHex);
-            this.groupBoxOptions.Location = new System.Drawing.Point(368, 277);
+            this.groupBoxOptions.Location = new System.Drawing.Point(368, 299);
             this.groupBoxOptions.Name = "groupBoxOptions";
             this.groupBoxOptions.Size = new System.Drawing.Size(274, 246);
             this.groupBoxOptions.TabIndex = 5;
@@ -583,13 +584,14 @@
             // 
             // groupBoxOutput
             // 
+            this.groupBoxOutput.Controls.Add(this.checkBoxOutputToFile);
             this.groupBoxOutput.Controls.Add(this.comboBoxOutputFormat);
             this.groupBoxOutput.Controls.Add(this.labelOutputFormat);
             this.groupBoxOutput.Controls.Add(this.labelOutputFile);
             this.groupBoxOutput.Controls.Add(this.textBoxOutputFile);
             this.groupBoxOutput.Location = new System.Drawing.Point(368, 184);
             this.groupBoxOutput.Name = "groupBoxOutput";
-            this.groupBoxOutput.Size = new System.Drawing.Size(274, 87);
+            this.groupBoxOutput.Size = new System.Drawing.Size(274, 109);
             this.groupBoxOutput.TabIndex = 3;
             this.groupBoxOutput.TabStop = false;
             this.groupBoxOutput.Text = "Output";
@@ -613,7 +615,7 @@
             "13 = hash[:salt]:hex_plain:crackpos",
             "14 = plain:hex_plain:crackpos",
             "15 = hash[:salt]:plain:hex_plain:crackpos"});
-            this.comboBoxOutputFormat.Location = new System.Drawing.Point(61, 51);
+            this.comboBoxOutputFormat.Location = new System.Drawing.Point(62, 74);
             this.comboBoxOutputFormat.Name = "comboBoxOutputFormat";
             this.comboBoxOutputFormat.Size = new System.Drawing.Size(194, 21);
             this.comboBoxOutputFormat.TabIndex = 41;
@@ -621,7 +623,7 @@
             // labelOutputFormat
             // 
             this.labelOutputFormat.AutoSize = true;
-            this.labelOutputFormat.Location = new System.Drawing.Point(13, 54);
+            this.labelOutputFormat.Location = new System.Drawing.Point(14, 77);
             this.labelOutputFormat.Name = "labelOutputFormat";
             this.labelOutputFormat.Size = new System.Drawing.Size(42, 13);
             this.labelOutputFormat.TabIndex = 16;
@@ -630,7 +632,7 @@
             // labelOutputFile
             // 
             this.labelOutputFile.AutoSize = true;
-            this.labelOutputFile.Location = new System.Drawing.Point(13, 25);
+            this.labelOutputFile.Location = new System.Drawing.Point(14, 50);
             this.labelOutputFile.Name = "labelOutputFile";
             this.labelOutputFile.Size = new System.Drawing.Size(26, 13);
             this.labelOutputFile.TabIndex = 15;
@@ -638,7 +640,7 @@
             // 
             // textBoxOutputFile
             // 
-            this.textBoxOutputFile.Location = new System.Drawing.Point(61, 22);
+            this.textBoxOutputFile.Location = new System.Drawing.Point(62, 47);
             this.textBoxOutputFile.Name = "textBoxOutputFile";
             this.textBoxOutputFile.Size = new System.Drawing.Size(194, 20);
             this.textBoxOutputFile.TabIndex = 40;
@@ -660,7 +662,7 @@
             this.groupBoxGPUResources.Controls.Add(this.comboBoxWorkloadProfile);
             this.groupBoxGPUResources.Controls.Add(this.checkBoxSpecificWorkloadProfile);
             this.groupBoxGPUResources.Controls.Add(this.checkBoxGPUAsync);
-            this.groupBoxGPUResources.Location = new System.Drawing.Point(13, 299);
+            this.groupBoxGPUResources.Location = new System.Drawing.Point(13, 321);
             this.groupBoxGPUResources.Name = "groupBoxGPUResources";
             this.groupBoxGPUResources.Size = new System.Drawing.Size(345, 224);
             this.groupBoxGPUResources.TabIndex = 4;
@@ -883,11 +885,21 @@
             this.buttonClearTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClearTask.UseVisualStyleBackColor = true;
             // 
+            // checkBoxOutputToFile
+            // 
+            this.checkBoxOutputToFile.AutoSize = true;
+            this.checkBoxOutputToFile.Location = new System.Drawing.Point(15, 21);
+            this.checkBoxOutputToFile.Name = "checkBoxOutputToFile";
+            this.checkBoxOutputToFile.Size = new System.Drawing.Size(86, 17);
+            this.checkBoxOutputToFile.TabIndex = 42;
+            this.checkBoxOutputToFile.Text = "Output to file";
+            this.checkBoxOutputToFile.UseVisualStyleBackColor = true;
+            // 
             // TaskEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 537);
+            this.ClientSize = new System.Drawing.Size(656, 556);
             this.Controls.Add(this.groupBoxActions);
             this.Controls.Add(this.groupBoxGPUResources);
             this.Controls.Add(this.groupBoxOutput);
@@ -985,5 +997,6 @@
         private System.Windows.Forms.Button buttonCancelTask;
         private System.Windows.Forms.Button buttonSubmitTask;
         private System.Windows.Forms.Button buttonClearTask;
+        private System.Windows.Forms.CheckBox checkBoxOutputToFile;
     }
 }

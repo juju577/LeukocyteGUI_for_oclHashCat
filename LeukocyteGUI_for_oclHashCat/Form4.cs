@@ -122,9 +122,14 @@ namespace LeukocyteGUI_for_oclHashCat
                 return;
             }
 
-            Data = comboBoxOutputFormat.Text.Split('=');
-            MainCrackTaskManager.CrackTasks[TaskId].SetOutputFormatCode(byte.Parse(Data[0].Trim()));
-            MainCrackTaskManager.CrackTasks[TaskId].SetOutputFormatName(Data[1].Trim());
+            if (checkBoxOutputToFile.Checked)
+            {
+                MainCrackTaskManager.CrackTasks[TaskId].OutputToFile = true;
+                Data = comboBoxOutputFormat.Text.Split('=');
+                MainCrackTaskManager.CrackTasks[TaskId].SetOutputFormatCode(byte.Parse(Data[0].Trim()));
+                MainCrackTaskManager.CrackTasks[TaskId].SetOutputFormatName(Data[1].Trim());
+            }
+
             MainCrackTaskManager.CrackTasks[TaskId].SetSessionId(textBoxSessionId.Text);
             MainCrackTaskManager.CrackTasks[TaskId].CharsetIsInHex = checkBoxCharsetIsInHex.Enabled;
             MainCrackTaskManager.CrackTasks[TaskId].SaltIsInHex = checkBoxSaltIsInHex.Enabled;
@@ -139,6 +144,10 @@ namespace LeukocyteGUI_for_oclHashCat
         private void TaskEditorForm_Load(object sender, EventArgs e)
         {
             MainCrackTaskManager = (this.Owner as MainForm).MainCrackTaskManager;
+            comboBoxHashType.SelectedIndex = 0;
+            comboBoxOutputFormat.SelectedIndex = 0;
+            comboBoxWorkloadProfile.SelectedIndex = 0;
+            comboBoxWorkloadTuning.SelectedIndex = 0;
         }
     }
 }
