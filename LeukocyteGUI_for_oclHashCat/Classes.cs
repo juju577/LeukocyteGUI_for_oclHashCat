@@ -583,8 +583,8 @@ namespace LeukocyteGUI_for_oclHashCat
                 string result = "";
 
                 result
-                   += " --hash-type="      + sAttackType.ToString()
-                    + " --attack-mode="    + sHashTypeCode.ToString()
+                   += " --hash-type="      + sHashTypeCode.ToString()
+                    + " --attack-mode="    + sAttackType.ToString()
                     + " --session="        + sSessionId
                     + " --status"
                     + " --status-timer="   + "2"
@@ -604,17 +604,17 @@ namespace LeukocyteGUI_for_oclHashCat
 
                 if (UseCharset2)
                 {
-                    result += " --custom-charset1=" + sCharset2;
+                    result += " --custom-charset2=" + sCharset2;
                 }
 
                 if (UseCharset3)
                 {
-                    result += " --custom-charset1=" + sCharset3;
+                    result += " --custom-charset3=" + sCharset3;
                 }
 
                 if (UseCharset4)
                 {
-                    result += " --custom-charset1=" + sCharset4;
+                    result += " --custom-charset4=" + sCharset4;
                 }
 
                 if (EnableIncrementMode)
@@ -642,7 +642,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
                 if (EnableWorkloadFineTuning)
                 {
-                    result += " --gpu-loops" + sWorkloadFineTuning.ToString();
+                    result += " --gpu-loops=" + sWorkloadFineTuning.ToString();
                 }
 
                 if (DisableTempReading)
