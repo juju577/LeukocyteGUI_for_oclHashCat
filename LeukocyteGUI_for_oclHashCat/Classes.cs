@@ -59,10 +59,12 @@ namespace LeukocyteGUI_for_oclHashCat
     public class CrackTaskManager
     {
         public CrackTask[] CrackTasks;
+        public VisualManager Visualizer;
 
         public CrackTaskManager()
         {
             CrackTasks = new CrackTask[0];
+            Visualizer = new VisualManager();
         }
 
         public int AddTask(int Index)
@@ -87,7 +89,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
         public int AddTask()
         {
-            return AddTask(CrackTasks.Length) - 1;
+            return AddTask(CrackTasks.Length);
         }
 
         public int DeleteTask(int Index)
@@ -718,6 +720,60 @@ namespace LeukocyteGUI_for_oclHashCat
                 }
 
                 return result;
+            }
+        }
+
+        public class VisualManager
+        {
+            private ListView sListView;
+
+            public void SetListView(ListView VisualizerListView)
+            {
+                sListView = VisualizerListView;
+            }
+
+            public bool VisualizeTasks()
+            {
+                bool result = true;
+
+                try
+                {
+                    //todo
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+
+                return result;
+            }
+
+            public static class Indexes
+            {
+                public static int
+                    HashFileName = -1,
+                    HashTypeName = -1,
+                    BruteforceMask = -1,
+                    IndexSeparator = -1,
+                    Charset1 = -1,
+                    Charset2 = -1,
+                    Charset3 = -1,
+                    Charset4 = -1,
+                    Dictionary = -1,
+                    OutputFileName = -1,
+                    OutputFormatName = -1,
+                    SessionId = -1,
+                    WorkloadProfileName = -1,
+                    HashTypeCode = -1,
+                    WorkloadFineTuning = -1,
+                    WorkloadProfileCode = -1,
+                    OutputFormatCode = -1,
+                    StartLength = -1,
+                    MaxLength = -1,
+                    WorkloadTuning = -1,
+                    AbortTemp = -1,
+                    RetainTemp = -1,
+                    AttackType = -1;
             }
         }
     }

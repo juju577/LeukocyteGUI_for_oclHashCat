@@ -38,7 +38,7 @@ namespace LeukocyteGUI_for_oclHashCat
             }
             else
             {
-                TaskId = MainCrackTaskManager.AddTask();
+                TaskId = MainCrackTaskManager.AddTask() - 1;
             }
 
             CrackTask = MainCrackTaskManager.CrackTasks[TaskId];
@@ -156,6 +156,8 @@ namespace LeukocyteGUI_for_oclHashCat
             CrackTask.RemoveCrackedHashes = checkBoxRemoveCracked.Enabled;
             CrackTask.DisablePotfile = checkBoxDisablePot.Enabled;
             CrackTask.DisableLogfile = checkBoxDisableLog.Enabled;
+
+            this.Close();
         }
 
         private void TaskEditorForm_Load(object sender, EventArgs e)
@@ -235,6 +237,16 @@ namespace LeukocyteGUI_for_oclHashCat
                 checkBoxDisablePot.Checked = CrackTask.DisablePotfile;
                 checkBoxDisableLog.Checked = CrackTask.DisableLogfile;
             }
+        }
+
+        private void buttonCancelTask_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonClearTask_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

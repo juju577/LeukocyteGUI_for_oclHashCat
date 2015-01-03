@@ -66,6 +66,7 @@
             this.checkBoxSaltIsInHex = new System.Windows.Forms.CheckBox();
             this.checkBoxCharsetIsInHex = new System.Windows.Forms.CheckBox();
             this.groupBoxOutput = new System.Windows.Forms.GroupBox();
+            this.checkBoxOutputToFile = new System.Windows.Forms.CheckBox();
             this.comboBoxOutputFormat = new System.Windows.Forms.ComboBox();
             this.labelOutputFormat = new System.Windows.Forms.Label();
             this.labelOutputFile = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.buttonCancelTask = new System.Windows.Forms.Button();
             this.buttonSubmitTask = new System.Windows.Forms.Button();
             this.buttonClearTask = new System.Windows.Forms.Button();
-            this.checkBoxOutputToFile = new System.Windows.Forms.CheckBox();
             this.groupBoxAttackType.SuspendLayout();
             this.groupBoxHash.SuspendLayout();
             this.groupBoxIncrement.SuspendLayout();
@@ -596,6 +596,16 @@
             this.groupBoxOutput.TabStop = false;
             this.groupBoxOutput.Text = "Output";
             // 
+            // checkBoxOutputToFile
+            // 
+            this.checkBoxOutputToFile.AutoSize = true;
+            this.checkBoxOutputToFile.Location = new System.Drawing.Point(15, 21);
+            this.checkBoxOutputToFile.Name = "checkBoxOutputToFile";
+            this.checkBoxOutputToFile.Size = new System.Drawing.Size(86, 17);
+            this.checkBoxOutputToFile.TabIndex = 42;
+            this.checkBoxOutputToFile.Text = "Output to file";
+            this.checkBoxOutputToFile.UseVisualStyleBackColor = true;
+            // 
             // comboBoxOutputFormat
             // 
             this.comboBoxOutputFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -861,6 +871,7 @@
             this.buttonCancelTask.TabIndex = 44;
             this.buttonCancelTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancelTask.UseVisualStyleBackColor = true;
+            this.buttonCancelTask.Click += new System.EventHandler(this.buttonCancelTask_Click);
             // 
             // buttonSubmitTask
             // 
@@ -884,16 +895,7 @@
             this.buttonClearTask.TabIndex = 43;
             this.buttonClearTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClearTask.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxOutputToFile
-            // 
-            this.checkBoxOutputToFile.AutoSize = true;
-            this.checkBoxOutputToFile.Location = new System.Drawing.Point(15, 21);
-            this.checkBoxOutputToFile.Name = "checkBoxOutputToFile";
-            this.checkBoxOutputToFile.Size = new System.Drawing.Size(86, 17);
-            this.checkBoxOutputToFile.TabIndex = 42;
-            this.checkBoxOutputToFile.Text = "Output to file";
-            this.checkBoxOutputToFile.UseVisualStyleBackColor = true;
+            this.buttonClearTask.Click += new System.EventHandler(this.buttonClearTask_Click);
             // 
             // TaskEditorForm
             // 
