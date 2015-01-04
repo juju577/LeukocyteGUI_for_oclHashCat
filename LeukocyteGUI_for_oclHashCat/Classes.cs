@@ -727,10 +727,12 @@ namespace LeukocyteGUI_for_oclHashCat
         {
             private ListView sListView;
             private CrackTask[] sCrackTasks;
+            public Indexes InfoIndexes;
 
             public VisualManager(CrackTask[] CrackTasks)
             {
                 sCrackTasks = CrackTasks;
+                InfoIndexes = new Indexes();
             }
 
             public void SetListView(ListView VisualizerListView)
@@ -748,7 +750,128 @@ namespace LeukocyteGUI_for_oclHashCat
 
                     for (int i = 0; i < sCrackTasks.Length; i++)
                     {
-                        //todo
+                        string[] values = new string[InfoIndexes.RealLength];
+
+                        if (InfoIndexes.AbortTemp > -1)
+                        {
+                            values[InfoIndexes.AbortTemp] = sCrackTasks[i].AbortTemp.ToString();
+                        }
+
+                        if (InfoIndexes.AttackType > -1)
+                        {
+                            values[InfoIndexes.AttackType] = sCrackTasks[i].AttackType.ToString();
+                        }
+
+                        if (InfoIndexes.BruteforceMaskDictionary > -1)
+                        {
+                            switch (sCrackTasks[i].AttackType)
+                            {
+                                case 0:
+                                    values[InfoIndexes.BruteforceMaskDictionary] = sCrackTasks[i].Dictionary;
+                                    break;
+                                case 3:
+                                    values[InfoIndexes.BruteforceMaskDictionary] = sCrackTasks[i].BruteforceMask;
+                                    break;
+                            }
+                        }
+
+                        if (InfoIndexes.Charset1 > -1)
+                        {
+                            values[InfoIndexes.Charset1] = sCrackTasks[i].Charset1;
+                        }
+
+                        if (InfoIndexes.Charset2 > -1)
+                        {
+                            values[InfoIndexes.Charset2] = sCrackTasks[i].Charset2;
+                        }
+
+                        if (InfoIndexes.Charset3 > -1)
+                        {
+                            values[InfoIndexes.Charset3] = sCrackTasks[i].Charset3;
+                        }
+
+                        if (InfoIndexes.Charset4 > -1)
+                        {
+                            values[InfoIndexes.Charset4] = sCrackTasks[i].Charset4;
+                        }
+
+                        if (InfoIndexes.HashFileName > -1)
+                        {
+                            values[InfoIndexes.HashFileName] = sCrackTasks[i].HashFileName;
+                        }
+
+                        if (InfoIndexes.HashTypeCode > -1)
+                        {
+                            values[InfoIndexes.HashTypeCode] = sCrackTasks[i].HashTypeCode.ToString();
+                        }
+
+                        if (InfoIndexes.HashTypeName > -1)
+                        {
+                            values[InfoIndexes.HashTypeName] = sCrackTasks[i].HashTypeName;
+                        }
+
+                        if (InfoIndexes.Separator > -1)
+                        {
+                            values[InfoIndexes.Separator] = sCrackTasks[i].HashTypeName;
+                        }
+
+                        if (InfoIndexes.MaxLength > -1)
+                        {
+                            values[InfoIndexes.MaxLength] = sCrackTasks[i].MaxLength.ToString();
+                        }
+
+                        if (InfoIndexes.OutputFileName > -1)
+                        {
+                            values[InfoIndexes.OutputFileName] = sCrackTasks[i].OutputFileName;
+                        }
+
+                        if (InfoIndexes.OutputFormatCode > -1)
+                        {
+                            values[InfoIndexes.OutputFormatCode] = sCrackTasks[i].OutputFormatCode.ToString();
+                        }
+
+                        if (InfoIndexes.OutputFormatName > -1)
+                        {
+                            values[InfoIndexes.OutputFormatName] = sCrackTasks[i].OutputFormatName;
+                        }
+
+                        if (InfoIndexes.RetainTemp > -1)
+                        {
+                            values[InfoIndexes.RetainTemp] = sCrackTasks[i].RetainTemp.ToString();
+                        }
+
+                        if (InfoIndexes.SessionId > -1)
+                        {
+                            values[InfoIndexes.SessionId] = sCrackTasks[i].SessionId;
+                        }
+
+                        if (InfoIndexes.StartLength > -1)
+                        {
+                            values[InfoIndexes.StartLength] = sCrackTasks[i].StartLength.ToString();
+                        }
+
+                        if (InfoIndexes.WorkloadFineTuning > -1)
+                        {
+                            values[InfoIndexes.WorkloadFineTuning] = sCrackTasks[i].WorkloadFineTuning.ToString();
+                        }
+
+                        if (InfoIndexes.WorkloadProfileCode > -1)
+                        {
+                            values[InfoIndexes.WorkloadProfileCode] = sCrackTasks[i].WorkloadProfileCode.ToString();
+                        }
+
+                        if (InfoIndexes.WorkloadProfileName > -1)
+                        {
+                            values[InfoIndexes.WorkloadProfileName] = sCrackTasks[i].WorkloadProfileName;
+                        }
+
+                        if (InfoIndexes.WorkloadTuning > -1)
+                        {
+                            values[InfoIndexes.WorkloadTuning] = sCrackTasks[i].WorkloadTuning.ToString();
+                        }
+
+                        ListViewItem Task = new ListViewItem(values);
+                        sListView.Items.Add(Task);
                     }
                 }
                 catch(Exception e) 
@@ -759,32 +882,364 @@ namespace LeukocyteGUI_for_oclHashCat
                 return result;
             }
 
-            public static class Indexes
+            public class Indexes
             {
-                public static int
-                    HashFileName = -1,
-                    HashTypeName = -1,
-                    BruteforceMask = -1,
-                    IndexSeparator = -1,
-                    Charset1 = -1,
-                    Charset2 = -1,
-                    Charset3 = -1,
-                    Charset4 = -1,
-                    Dictionary = -1,
-                    OutputFileName = -1,
-                    OutputFormatName = -1,
-                    SessionId = -1,
-                    WorkloadProfileName = -1,
-                    HashTypeCode = -1,
-                    WorkloadFineTuning = -1,
-                    WorkloadProfileCode = -1,
-                    OutputFormatCode = -1,
-                    StartLength = -1,
-                    MaxLength = -1,
-                    WorkloadTuning = -1,
-                    AbortTemp = -1,
-                    RetainTemp = -1,
-                    AttackType = -1;
+                private Dictionary<string, int> sIndexes = new Dictionary<string, int>()
+                {
+                    { "HashFileName", -1 },
+                    { "HashTypeName", -1 },
+                    { "BruteforceMaskDictionary", -1 },
+                    { "Separator", -1 },
+                    { "Charset1", -1 },
+                    { "Charset2", -1 },
+                    { "Charset3", -1 },
+                    { "Charset4", -1 },
+                    { "OutputFileName", -1 },
+                    { "OutputFormatName", -1 },
+                    { "SessionId", -1 },
+                    { "WorkloadProfileName", -1 },
+                    { "HashTypeCode", -1 },
+                    { "WorkloadFineTuning", -1 },
+                    { "WorkloadProfileCode", -1 },
+                    { "OutputFormatCode", -1 },
+                    { "StartLength", -1 },
+                    { "MaxLength", -1 },
+                    { "WorkloadTuning", -1 },
+                    { "AbortTemp", -1 },
+                    { "RetainTemp", -1 },
+                    { "AttackType", -1 }
+                };
+
+                private int sRealLength = 0;
+
+                private int UpdateRealLength()
+                {
+                    foreach (KeyValuePair<string, int> pair in sIndexes)
+                    {
+                        if (pair.Value > RealLength)
+                        {
+                            sRealLength = pair.Value;
+                        }
+                    }
+
+                    return RealLength;
+                }
+
+                public int HashFileName
+                {
+                    get
+                    {
+                        return sIndexes["HashFileName"];
+                    }
+
+                    set
+                    {
+                        sIndexes["HashFileName"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int HashTypeName
+                {
+                    get
+                    {
+                        return sIndexes["HashTypeName"];
+                    }
+
+                    set
+                    {
+                        sIndexes["HashTypeName"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int BruteforceMaskDictionary
+                {
+                    get
+                    {
+                        return sIndexes["BruteforceMaskDictionary"];
+                    }
+
+                    set
+                    {
+                        sIndexes["BruteforceMaskDictionary"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Separator
+                {
+                    get
+                    {
+                        return sIndexes["Separator"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Separator"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Charset1
+                {
+                    get
+                    {
+                        return sIndexes["Charset1"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Charset1"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Charset2
+                {
+                    get
+                    {
+                        return sIndexes["Charset2"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Charset2"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Charset3
+                {
+                    get
+                    {
+                        return sIndexes["Charset3"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Charset3"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Charset4
+                {
+                    get
+                    {
+                        return sIndexes["Charset4"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Charset4"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int OutputFileName
+                {
+                    get
+                    {
+                        return sIndexes["OutputFileName"];
+                    }
+
+                    set
+                    {
+                        sIndexes["OutputFileName"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int OutputFormatName
+                {
+                    get
+                    {
+                        return sIndexes["OutputFormatName"];
+                    }
+
+                    set
+                    {
+                        sIndexes["OutputFormatName"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int SessionId
+                {
+                    get
+                    {
+                        return sIndexes["SessionId"];
+                    }
+
+                    set
+                    {
+                        sIndexes["SessionId"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int WorkloadProfileName
+                {
+                    get
+                    {
+                        return sIndexes["WorkloadProfileName"];
+                    }
+
+                    set
+                    {
+                        sIndexes["WorkloadProfileName"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int HashTypeCode
+                {
+                    get
+                    {
+                        return sIndexes["HashTypeCode"];
+                    }
+
+                    set
+                    {
+                        sIndexes["HashTypeCode"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int WorkloadFineTuning
+                {
+                    get
+                    {
+                        return sIndexes["WorkloadFineTuning"];
+                    }
+
+                    set
+                    {
+                        sIndexes["WorkloadFineTuning"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int WorkloadProfileCode
+                {
+                    get
+                    {
+                        return sIndexes["WorkloadProfileCode"];
+                    }
+
+                    set
+                    {
+                        sIndexes["WorkloadProfileCode"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int OutputFormatCode
+                {
+                    get
+                    {
+                        return sIndexes["OutputFormatCode"];
+                    }
+
+                    set
+                    {
+                        sIndexes["OutputFormatCode"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int StartLength
+                {
+                    get
+                    {
+                        return sIndexes["StartLength"];
+                    }
+
+                    set
+                    {
+                        sIndexes["StartLength"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int MaxLength
+                {
+                    get
+                    {
+                        return sIndexes["MaxLength"];
+                    }
+
+                    set
+                    {
+                        sIndexes["MaxLength"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int WorkloadTuning
+                {
+                    get
+                    {
+                        return sIndexes["WorkloadTuning"];
+                    }
+
+                    set
+                    {
+                        sIndexes["WorkloadTuning"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int AbortTemp
+                {
+                    get
+                    {
+                        return sIndexes["AbortTemp"];
+                    }
+
+                    set
+                    {
+                        sIndexes["AbortTemp"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int RetainTemp
+                {
+                    get
+                    {
+                        return sIndexes["RetainTemp"];
+                    }
+
+                    set
+                    {
+                        sIndexes["RetainTemp"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int AttackType
+                {
+                    get
+                    {
+                        return sIndexes["AttackType"];
+                    }
+
+                    set
+                    {
+                        sIndexes["AttackType"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int RealLength
+                {
+                    get
+                    {
+                        return sRealLength;
+                    }
+                }
             }
         }
     }

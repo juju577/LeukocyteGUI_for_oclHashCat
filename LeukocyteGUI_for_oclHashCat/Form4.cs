@@ -157,6 +157,8 @@ namespace LeukocyteGUI_for_oclHashCat
             CrackTask.DisablePotfile = checkBoxDisablePot.Enabled;
             CrackTask.DisableLogfile = checkBoxDisableLog.Enabled;
 
+            MainCrackTaskManager.Visualizer.VisualizeTasks();
+
             this.Close();
         }
 
