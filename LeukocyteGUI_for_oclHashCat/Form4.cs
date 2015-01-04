@@ -160,10 +160,8 @@ namespace LeukocyteGUI_for_oclHashCat
             this.Close();
         }
 
-        private void TaskEditorForm_Load(object sender, EventArgs e)
+        private void FillFormWithTaskData()
         {
-            MainCrackTaskManager = (this.Owner as MainForm).MainCrackTaskManager;
-
             if (ChangingTaskId == -1)
             {
                 comboBoxHashType.SelectedIndex = 0;
@@ -171,6 +169,49 @@ namespace LeukocyteGUI_for_oclHashCat
                 comboBoxWorkloadProfile.SelectedIndex = 0;
                 comboBoxWorkloadTuning.SelectedIndex = 0;
                 textBoxSessionId.Text = DateTime.Now.ToString("yyyyMMddHHmmss");
+
+                textBoxHashFileName.Text = "";
+                textBoxSeparator.Text = ":";
+                radioButtonAttackTypeBrute.Checked = true;
+
+                textBoxBruteforceMask.Text = "";
+                textBoxDictionary.Text = "";
+                textBoxCharset1.Text = "";
+                textBoxCharset2.Text = "";
+                textBoxCharset3.Text = "";
+                textBoxCharset4.Text = "";
+                checkBoxCharset1.Checked = false;
+                checkBoxCharset2.Checked = false;
+                checkBoxCharset3.Checked = false;
+                checkBoxCharset4.Checked = false;
+
+                checkBoxGPUAsync.Checked = false;
+                checkBoxSpecificWorkloadProfile.Checked = false;
+                checkBoxWorkloadTuning.Checked = false;
+                checkBoxWorkloadFineTuning.Checked = false;
+                checkBoxDisableTemp.Checked = false;
+                checkBoxTempAbort.Checked = false;
+                checkBoxTempRetain.Checked = false;
+                checkBoxDisablePowertune.Checked = false;
+                numericUpDownWorkloadFineTuning.Value = 8;
+                numericUpDownTempAbort.Value = 0;
+                numericUpDownTempRetain.Value = 0;
+
+                checkBoxEnableIncrement.Checked = false;
+                numericUpDownIncrementMin.Value = 0;
+                numericUpDownIncrementMax.Value = 0;
+
+                checkBoxOutputToFile.Checked = false;
+                textBoxOutputFile.Text = "";
+
+                checkBoxCharsetIsInHex.Checked = false;
+                checkBoxSaltIsInHex.Checked = false;
+                checkBoxIgnoreWarnings.Checked = false;
+                checkBoxLoopback.Checked = false;
+                checkBoxIgnoreUsernames.Checked = false;
+                checkBoxRemoveCracked.Checked = false;
+                checkBoxDisablePot.Checked = false;
+                checkBoxDisableLog.Checked = false;
             }
             else
             {
@@ -239,6 +280,12 @@ namespace LeukocyteGUI_for_oclHashCat
             }
         }
 
+        private void TaskEditorForm_Load(object sender, EventArgs e)
+        {
+            MainCrackTaskManager = (this.Owner as MainForm).MainCrackTaskManager;
+            FillFormWithTaskData();
+        }
+
         private void buttonCancelTask_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -246,7 +293,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
         private void buttonClearTask_Click(object sender, EventArgs e)
         {
-
+            FillFormWithTaskData();
         }
     }
 }

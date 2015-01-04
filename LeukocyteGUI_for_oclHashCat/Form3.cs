@@ -18,6 +18,7 @@ namespace LeukocyteGUI_for_oclHashCat
         {
             InitializeComponent();
             tskManager = new CrackTaskManager();
+            tskManager.Visualizer.SetListView(listViewTasks);
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)

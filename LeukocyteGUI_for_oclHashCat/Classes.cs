@@ -64,7 +64,7 @@ namespace LeukocyteGUI_for_oclHashCat
         public CrackTaskManager()
         {
             CrackTasks = new CrackTask[0];
-            Visualizer = new VisualManager();
+            Visualizer = new VisualManager(CrackTasks);
         }
 
         public int AddTask(int Index)
@@ -726,6 +726,12 @@ namespace LeukocyteGUI_for_oclHashCat
         public class VisualManager
         {
             private ListView sListView;
+            private CrackTask[] sCrackTasks;
+
+            public VisualManager(CrackTask[] CrackTasks)
+            {
+                sCrackTasks = CrackTasks;
+            }
 
             public void SetListView(ListView VisualizerListView)
             {
@@ -735,12 +741,17 @@ namespace LeukocyteGUI_for_oclHashCat
             public bool VisualizeTasks()
             {
                 bool result = true;
-
+                
                 try
                 {
-                    //todo
+                    sListView.Items.Clear();
+
+                    for (int i = 0; i < sCrackTasks.Length; i++)
+                    {
+                        //todo
+                    }
                 }
-                catch(Exception e)
+                catch(Exception e) 
                 {
                     MessageBox.Show(e.ToString());
                 }
