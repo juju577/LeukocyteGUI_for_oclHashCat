@@ -28,20 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "1",
-            "MD5",
-            "d8d28aa7aa56bb603f669ed1417162bb",
-            "...",
-            "9/10",
-            "94.34%",
-            "Cracking",
-            "15:38",
-            "c:\\users\\file.hash.found",
-            "C:\\dictionaries\\dic1.txt",
-            "15.12.14 14:53:15",
-            "",
-            "12345678"}, -1);
             this.textBoxHashcat = new System.Windows.Forms.TextBox();
             this.listViewTasks = new System.Windows.Forms.ListView();
             this.columnHeaderNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -114,8 +100,6 @@
             this.listViewTasks.FullRowSelect = true;
             this.listViewTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewTasks.HideSelection = false;
-            this.listViewTasks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.listViewTasks.Location = new System.Drawing.Point(11, 144);
             this.listViewTasks.MultiSelect = false;
             this.listViewTasks.Name = "listViewTasks";
