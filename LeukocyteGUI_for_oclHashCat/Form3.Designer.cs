@@ -31,15 +31,15 @@
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "MD5",
+            "d8d28aa7aa56bb603f669ed1417162bb",
+            "...",
+            "9/10",
+            "94.34%",
+            "Cracking",
+            "15:38",
             "c:\\users\\file.hash",
             "c:\\users\\file.hash.found",
             "C:\\dictionaries\\dic1.txt",
-            "9/10",
-            "6/10",
-            "94.34%",
-            "2/10",
-            "Cracking",
-            "15:38",
             "15.12.14 14:53:15",
             "",
             "12345678"}, -1);
@@ -51,8 +51,9 @@
             this.columnHeaderOutput = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDictionary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderCracked = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPlain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderEstimated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStarted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,7 +81,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBoxGPUStatistics = new System.Windows.Forms.GroupBox();
             this.groupBoxActions = new System.Windows.Forms.GroupBox();
-            this.columnHeaderLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxMainSettings.SuspendLayout();
             this.groupBoxGPUStatistics.SuspendLayout();
             this.groupBoxActions.SuspendLayout();
@@ -102,15 +102,15 @@
             this.listViewTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderNumber,
             this.columnHeaderHashType,
+            this.columnHeaderHash,
+            this.columnHeaderPlain,
+            this.columnHeaderLength,
+            this.columnHeaderProgress,
+            this.columnHeaderStatus,
+            this.columnHeaderEstimated,
             this.columnHeaderHashFile,
             this.columnHeaderOutput,
             this.columnHeaderDictionary,
-            this.columnHeaderHash,
-            this.columnHeaderLength,
-            this.columnHeaderProgress,
-            this.columnHeaderCracked,
-            this.columnHeaderStatus,
-            this.columnHeaderEstimated,
             this.columnHeaderStarted,
             this.columnHeaderFinished,
             this.columnHeaderSession});
@@ -155,16 +155,21 @@
             // columnHeaderHash
             // 
             this.columnHeaderHash.Text = "Hash";
-            this.columnHeaderHash.Width = 47;
+            this.columnHeaderHash.Width = 207;
+            // 
+            // columnHeaderLength
+            // 
+            this.columnHeaderLength.Text = "Length";
             // 
             // columnHeaderProgress
             // 
             this.columnHeaderProgress.Text = "Progress";
             this.columnHeaderProgress.Width = 54;
             // 
-            // columnHeaderCracked
+            // columnHeaderPlain
             // 
-            this.columnHeaderCracked.Text = "Cracked";
+            this.columnHeaderPlain.Text = "Plain";
+            this.columnHeaderPlain.Width = 206;
             // 
             // columnHeaderStatus
             // 
@@ -440,10 +445,6 @@
             this.groupBoxActions.TabStop = false;
             this.groupBoxActions.Text = "Actions";
             // 
-            // columnHeaderLength
-            // 
-            this.columnHeaderLength.Text = "Length";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,7 +475,7 @@
         private System.Windows.Forms.ColumnHeader columnHeaderProgress;
         private System.Windows.Forms.ColumnHeader columnHeaderStatus;
         private System.Windows.Forms.ColumnHeader columnHeaderHash;
-        private System.Windows.Forms.ColumnHeader columnHeaderCracked;
+        private System.Windows.Forms.ColumnHeader columnHeaderPlain;
         private System.Windows.Forms.ColumnHeader columnHeaderStarted;
         private System.Windows.Forms.ColumnHeader columnHeaderFinished;
         private System.Windows.Forms.ColumnHeader columnHeaderEstimated;
