@@ -287,6 +287,7 @@
             this.buttonDeleteTask.TabIndex = 10;
             this.buttonDeleteTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDeleteTask.UseVisualStyleBackColor = true;
+            this.buttonDeleteTask.Click += new System.EventHandler(this.buttonDeleteTask_Click);
             // 
             // buttonAddTask
             // 
