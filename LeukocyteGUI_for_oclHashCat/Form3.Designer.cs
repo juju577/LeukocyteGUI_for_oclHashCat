@@ -37,7 +37,6 @@
             "94.34%",
             "Cracking",
             "15:38",
-            "c:\\users\\file.hash",
             "c:\\users\\file.hash.found",
             "C:\\dictionaries\\dic1.txt",
             "15.12.14 14:53:15",
@@ -47,15 +46,14 @@
             this.listViewTasks = new System.Windows.Forms.ListView();
             this.columnHeaderNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHashType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderHashFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderOutput = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderDictionary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderHash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPlain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPlain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderEstimated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderOutput = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDictionary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStarted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFinished = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSession = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -108,7 +106,6 @@
             this.columnHeaderProgress,
             this.columnHeaderStatus,
             this.columnHeaderEstimated,
-            this.columnHeaderHashFile,
             this.columnHeaderOutput,
             this.columnHeaderDictionary,
             this.columnHeaderStarted,
@@ -137,25 +134,15 @@
             this.columnHeaderHashType.Text = "Hash Type";
             this.columnHeaderHashType.Width = 67;
             // 
-            // columnHeaderHashFile
-            // 
-            this.columnHeaderHashFile.Text = "Hash File";
-            this.columnHeaderHashFile.Width = 89;
-            // 
-            // columnHeaderOutput
-            // 
-            this.columnHeaderOutput.Text = "Output File";
-            this.columnHeaderOutput.Width = 116;
-            // 
-            // columnHeaderDictionary
-            // 
-            this.columnHeaderDictionary.Text = "Dictionary / Mask";
-            this.columnHeaderDictionary.Width = 102;
-            // 
             // columnHeaderHash
             // 
             this.columnHeaderHash.Text = "Hash";
             this.columnHeaderHash.Width = 207;
+            // 
+            // columnHeaderPlain
+            // 
+            this.columnHeaderPlain.Text = "Plain";
+            this.columnHeaderPlain.Width = 206;
             // 
             // columnHeaderLength
             // 
@@ -166,11 +153,6 @@
             this.columnHeaderProgress.Text = "Progress";
             this.columnHeaderProgress.Width = 54;
             // 
-            // columnHeaderPlain
-            // 
-            this.columnHeaderPlain.Text = "Plain";
-            this.columnHeaderPlain.Width = 206;
-            // 
             // columnHeaderStatus
             // 
             this.columnHeaderStatus.Text = "Status";
@@ -180,6 +162,16 @@
             // 
             this.columnHeaderEstimated.Text = "Estimated";
             this.columnHeaderEstimated.Width = 68;
+            // 
+            // columnHeaderOutput
+            // 
+            this.columnHeaderOutput.Text = "Output File";
+            this.columnHeaderOutput.Width = 116;
+            // 
+            // columnHeaderDictionary
+            // 
+            this.columnHeaderDictionary.Text = "Dictionary / Mask";
+            this.columnHeaderDictionary.Width = 102;
             // 
             // columnHeaderStarted
             // 
@@ -261,6 +253,7 @@
             this.buttonChangeTask.TabIndex = 13;
             this.buttonChangeTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonChangeTask.UseVisualStyleBackColor = true;
+            this.buttonChangeTask.Click += new System.EventHandler(this.buttonChangeTask_Click);
             // 
             // buttonDownTask
             // 
@@ -471,7 +464,6 @@
         private System.Windows.Forms.ListView listViewTasks;
         private System.Windows.Forms.ColumnHeader columnHeaderNumber;
         private System.Windows.Forms.ColumnHeader columnHeaderHashType;
-        private System.Windows.Forms.ColumnHeader columnHeaderHashFile;
         private System.Windows.Forms.ColumnHeader columnHeaderProgress;
         private System.Windows.Forms.ColumnHeader columnHeaderStatus;
         private System.Windows.Forms.ColumnHeader columnHeaderHash;

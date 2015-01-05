@@ -43,12 +43,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
             CrackTask = MainCrackTaskManager.CrackTasks[TaskId];
 
-            if (!CrackTask.SetHashFileName(textBoxHashFileName.Text, true))
-            {
-                MainCrackTaskManager.DeleteTask(TaskId);
-                return;
-            }
-
+            CrackTask.SetHash(textBoxHashFileName.Text);
             CrackTask.SetSeparator(textBoxSeparator.Text);
             Data = comboBoxHashType.Text.Split('=');
             CrackTask.SetHashTypeCode(int.Parse(Data[0].Trim()));
@@ -157,7 +152,16 @@ namespace LeukocyteGUI_for_oclHashCat
             CrackTask.DisablePotfile = checkBoxDisablePot.Enabled;
             CrackTask.DisableLogfile = checkBoxDisableLog.Enabled;
 
-            MainCrackTaskManager.Visualizer.VisualizeTasks();
+            MainCrackTaskManager.Visualizer.VisualizeNewTask();
+
+            if (ChangingTaskId > -1)
+            {
+                MainCrackTaskManager.Visualizer.VisualizeTask(TaskId);
+            }
+            else
+            {
+                MainCrackTaskManager.Visualizer.VisualizeNewTask();
+            }
 
             this.Close();
         }
@@ -219,7 +223,7 @@ namespace LeukocyteGUI_for_oclHashCat
             {
                 CrackTaskManager.CrackTask CrackTask = MainCrackTaskManager.CrackTasks[ChangingTaskId];
 
-                textBoxHashFileName.Text = CrackTask.HashFileName;
+                textBoxHashFileName.Text = CrackTask.Hash;
                 textBoxSeparator.Text = CrackTask.Separator;
                 comboBoxHashType.SelectedIndex
                     = comboBoxHashType.FindString(CrackTask.HashTypeCode.ToString());

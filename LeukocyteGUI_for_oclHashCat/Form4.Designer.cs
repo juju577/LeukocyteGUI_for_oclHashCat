@@ -863,6 +863,7 @@
             // 
             // buttonCancelTask
             // 
+            this.buttonCancelTask.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancelTask.Image = global::LeukocyteGUI_for_oclHashCat.Properties.Resources.button_cancel_8125;
             this.buttonCancelTask.Location = new System.Drawing.Point(125, 27);
             this.buttonCancelTask.Name = "buttonCancelTask";
@@ -901,6 +902,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelTask;
             this.ClientSize = new System.Drawing.Size(656, 556);
             this.Controls.Add(this.groupBoxActions);
             this.Controls.Add(this.groupBoxGPUResources);
@@ -909,6 +911,8 @@
             this.Controls.Add(this.groupBoxIncrement);
             this.Controls.Add(this.groupBoxHash);
             this.Controls.Add(this.groupBoxAttackType);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TaskEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LeukocyteGUI for oclHashCat - Task Editor";

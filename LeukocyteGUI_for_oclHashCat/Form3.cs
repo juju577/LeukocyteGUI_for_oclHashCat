@@ -24,12 +24,11 @@ namespace LeukocyteGUI_for_oclHashCat
             tskManager.Visualizer.InfoIndexes.HashTypeName = 1;
             tskManager.Visualizer.InfoIndexes.Hash = 2;
             tskManager.Visualizer.InfoIndexes.Plain = 3;
-            tskManager.Visualizer.InfoIndexes.HashFileName = 8;
-            tskManager.Visualizer.InfoIndexes.OutputFileName = 9;
-            tskManager.Visualizer.InfoIndexes.BruteforceMaskDictionary = 10;
-            tskManager.Visualizer.InfoIndexes.Started = 11;
-            tskManager.Visualizer.InfoIndexes.Finished = 12;
-            tskManager.Visualizer.InfoIndexes.SessionId = 13;
+            tskManager.Visualizer.InfoIndexes.OutputFileName = 8;
+            tskManager.Visualizer.InfoIndexes.BruteforceMaskDictionary = 9;
+            tskManager.Visualizer.InfoIndexes.Started = 10;
+            tskManager.Visualizer.InfoIndexes.Finished = 11;
+            tskManager.Visualizer.InfoIndexes.SessionId = 12;
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)
@@ -55,6 +54,16 @@ namespace LeukocyteGUI_for_oclHashCat
             set
             {
                 tskManager = value;
+            }
+        }
+
+        private void buttonChangeTask_Click(object sender, EventArgs e)
+        {
+            if (listViewTasks.SelectedIndices.Count > 0)
+            {
+                TaskEditorForm TaskEditor = new TaskEditorForm(listViewTasks.SelectedIndices[0]);
+                TaskEditor.Owner = this;
+                TaskEditor.ShowDialog(this);
             }
         }
     }

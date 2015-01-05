@@ -149,7 +149,7 @@ namespace LeukocyteGUI_for_oclHashCat
             private string sHashFileName, sHashTypeName, sBruteforceMask, sSeparator,
                 sCharset1, sCharset2, sCharset3, sCharset4, sDictionary, sOutputFileName,
                 sOutputFormatName, sSessionId, sWorkloadProfileName, sPlain, sHash;
-            private int sHashTypeCode, sWorkloadFineTuning;
+            private int sHashTypeCode, sWorkloadFineTuning = 8;
             private byte sWorkloadProfileCode, sOutputFormatCode, sStartLength, sMaxLength,
                 sWorkloadTuning, sAbortTemp, sRetainTemp, sAttackType;
             public DateTime Started, Finished;
@@ -320,7 +320,7 @@ namespace LeukocyteGUI_for_oclHashCat
                     return sStartLength;
                 }
             }
-            
+
             public byte MaxLength
             {
                 get
@@ -404,7 +404,7 @@ namespace LeukocyteGUI_for_oclHashCat
                     }
                 }
 
-                return result;   
+                return result;
             }
 
             public bool SetHashTypeName(string HashTypeName)
@@ -606,16 +606,16 @@ namespace LeukocyteGUI_for_oclHashCat
                 string result = "";
 
                 result
-                   += " --hash-type="      + sHashTypeCode.ToString()
-                    + " --attack-mode="    + sAttackType.ToString()
+                   += " --hash-type=" + sHashTypeCode.ToString()
+                    + " --attack-mode=" + sAttackType.ToString()
                     + " --status"
-                    + " --status-timer="   + "2"
-                    + " --separator="      + sSeparator;
+                    + " --status-timer=" + "2"
+                    + " --separator=" + sSeparator;
 
                 if (OutputToFile)
                 {
                     result
-                        += " --outfile="        + sOutputFileName
+                        += " --outfile=" + sOutputFileName
                          + " --outfile-format=" + sOutputFormatCode.ToString();
                 }
 
@@ -769,6 +769,174 @@ namespace LeukocyteGUI_for_oclHashCat
                 sListView = VisualizerListView;
             }
 
+            public bool VisualizeTask(int TaskId)
+            {
+                bool result = true;
+
+                try
+                {
+                    string[] values = new string[InfoIndexes.RealLength];
+
+                    if (InfoIndexes.AbortTemp > -1)
+                    {
+                        values[InfoIndexes.AbortTemp] = sCrackTaskManager.CrackTasks[TaskId].AbortTemp.ToString();
+                    }
+
+                    if (InfoIndexes.AttackType > -1)
+                    {
+                        values[InfoIndexes.AttackType] = sCrackTaskManager.CrackTasks[TaskId].AttackType.ToString();
+                    }
+
+                    if (InfoIndexes.BruteforceMaskDictionary > -1)
+                    {
+                        switch (sCrackTaskManager.CrackTasks[TaskId].AttackType)
+                        {
+                            case 0:
+                                values[InfoIndexes.BruteforceMaskDictionary] = sCrackTaskManager.CrackTasks[TaskId].Dictionary;
+                                break;
+                            case 3:
+                                values[InfoIndexes.BruteforceMaskDictionary] = sCrackTaskManager.CrackTasks[TaskId].BruteforceMask;
+                                break;
+                        }
+                    }
+
+                    if (InfoIndexes.Charset1 > -1)
+                    {
+                        values[InfoIndexes.Charset1] = sCrackTaskManager.CrackTasks[TaskId].Charset1;
+                    }
+
+                    if (InfoIndexes.Charset2 > -1)
+                    {
+                        values[InfoIndexes.Charset2] = sCrackTaskManager.CrackTasks[TaskId].Charset2;
+                    }
+
+                    if (InfoIndexes.Charset3 > -1)
+                    {
+                        values[InfoIndexes.Charset3] = sCrackTaskManager.CrackTasks[TaskId].Charset3;
+                    }
+
+                    if (InfoIndexes.Charset4 > -1)
+                    {
+                        values[InfoIndexes.Charset4] = sCrackTaskManager.CrackTasks[TaskId].Charset4;
+                    }
+
+                    if (InfoIndexes.Hash > -1)
+                    {
+                        values[InfoIndexes.Hash] = sCrackTaskManager.CrackTasks[TaskId].Hash;
+                    }
+
+                    if (InfoIndexes.HashFileName > -1)
+                    {
+                        values[InfoIndexes.HashFileName] = sCrackTaskManager.CrackTasks[TaskId].HashFileName;
+                    }
+
+                    if (InfoIndexes.HashTypeCode > -1)
+                    {
+                        values[InfoIndexes.HashTypeCode] = sCrackTaskManager.CrackTasks[TaskId].HashTypeCode.ToString();
+                    }
+
+                    if (InfoIndexes.HashTypeName > -1)
+                    {
+                        values[InfoIndexes.HashTypeName] = sCrackTaskManager.CrackTasks[TaskId].HashTypeName;
+                    }
+
+                    if (InfoIndexes.Separator > -1)
+                    {
+                        values[InfoIndexes.Separator] = sCrackTaskManager.CrackTasks[TaskId].HashTypeName;
+                    }
+
+                    if (InfoIndexes.MaxLength > -1)
+                    {
+                        values[InfoIndexes.MaxLength] = sCrackTaskManager.CrackTasks[TaskId].MaxLength.ToString();
+                    }
+
+                    if (InfoIndexes.OutputFileName > -1)
+                    {
+                        values[InfoIndexes.OutputFileName] = sCrackTaskManager.CrackTasks[TaskId].OutputFileName;
+                    }
+
+                    if (InfoIndexes.OutputFormatCode > -1)
+                    {
+                        values[InfoIndexes.OutputFormatCode] = sCrackTaskManager.CrackTasks[TaskId].OutputFormatCode.ToString();
+                    }
+
+                    if (InfoIndexes.OutputFormatName > -1)
+                    {
+                        values[InfoIndexes.OutputFormatName] = sCrackTaskManager.CrackTasks[TaskId].OutputFormatName;
+                    }
+
+                    if (InfoIndexes.Plain > -1)
+                    {
+                        values[InfoIndexes.Plain] = sCrackTaskManager.CrackTasks[TaskId].Plain;
+                    }
+
+                    if (InfoIndexes.RetainTemp > -1)
+                    {
+                        values[InfoIndexes.RetainTemp] = sCrackTaskManager.CrackTasks[TaskId].RetainTemp.ToString();
+                    }
+
+                    if (InfoIndexes.SessionId > -1)
+                    {
+                        values[InfoIndexes.SessionId] = sCrackTaskManager.CrackTasks[TaskId].SessionId;
+                    }
+
+                    if (InfoIndexes.StartLength > -1)
+                    {
+                        values[InfoIndexes.StartLength] = sCrackTaskManager.CrackTasks[TaskId].StartLength.ToString();
+                    }
+
+                    if (InfoIndexes.WorkloadFineTuning > -1)
+                    {
+                        values[InfoIndexes.WorkloadFineTuning] = sCrackTaskManager.CrackTasks[TaskId].WorkloadFineTuning.ToString();
+                    }
+
+                    if (InfoIndexes.WorkloadProfileCode > -1)
+                    {
+                        values[InfoIndexes.WorkloadProfileCode] = sCrackTaskManager.CrackTasks[TaskId].WorkloadProfileCode.ToString();
+                    }
+
+                    if (InfoIndexes.WorkloadProfileName > -1)
+                    {
+                        values[InfoIndexes.WorkloadProfileName] = sCrackTaskManager.CrackTasks[TaskId].WorkloadProfileName;
+                    }
+
+                    if (InfoIndexes.WorkloadTuning > -1)
+                    {
+                        values[InfoIndexes.WorkloadTuning] = sCrackTaskManager.CrackTasks[TaskId].WorkloadTuning.ToString();
+                    }
+
+                    if (InfoIndexes.Started > -1)
+                    {
+                        values[InfoIndexes.Started] = sCrackTaskManager.CrackTasks[TaskId].Started.ToString(DateTimeFormat);
+                    }
+
+                    if (InfoIndexes.Finished > -1)
+                    {
+                        values[InfoIndexes.Finished] = sCrackTaskManager.CrackTasks[TaskId].Finished.ToString(DateTimeFormat);
+                    }
+
+                    if (InfoIndexes.Id > -1)
+                    {
+                        values[InfoIndexes.Id] = (TaskId + StartId).ToString();
+                    }
+
+                    sListView.Items[TaskId] = new ListViewItem(values);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                    result = false;
+                }
+
+                return result;
+            }
+
+            public bool VisualizeNewTask()
+            {
+                sListView.Items.Add("");
+                return VisualizeTask(sCrackTaskManager.CrackTasks.Length - 1);
+            }
+
             public bool VisualizeTasks()
             {
                 bool result = true;
@@ -779,156 +947,11 @@ namespace LeukocyteGUI_for_oclHashCat
 
                     for (int i = 0; i < sCrackTaskManager.CrackTasks.Length; i++)
                     {
-                        string[] values = new string[InfoIndexes.RealLength];
-
-                        if (InfoIndexes.AbortTemp > -1)
-                        {
-                            values[InfoIndexes.AbortTemp] = sCrackTaskManager.CrackTasks[i].AbortTemp.ToString();
-                        }
-
-                        if (InfoIndexes.AttackType > -1)
-                        {
-                            values[InfoIndexes.AttackType] = sCrackTaskManager.CrackTasks[i].AttackType.ToString();
-                        }
-
-                        if (InfoIndexes.BruteforceMaskDictionary > -1)
-                        {
-                            switch (sCrackTaskManager.CrackTasks[i].AttackType)
-                            {
-                                case 0:
-                                    values[InfoIndexes.BruteforceMaskDictionary] = sCrackTaskManager.CrackTasks[i].Dictionary;
-                                    break;
-                                case 3:
-                                    values[InfoIndexes.BruteforceMaskDictionary] = sCrackTaskManager.CrackTasks[i].BruteforceMask;
-                                    break;
-                            }
-                        }
-
-                        if (InfoIndexes.Charset1 > -1)
-                        {
-                            values[InfoIndexes.Charset1] = sCrackTaskManager.CrackTasks[i].Charset1;
-                        }
-
-                        if (InfoIndexes.Charset2 > -1)
-                        {
-                            values[InfoIndexes.Charset2] = sCrackTaskManager.CrackTasks[i].Charset2;
-                        }
-
-                        if (InfoIndexes.Charset3 > -1)
-                        {
-                            values[InfoIndexes.Charset3] = sCrackTaskManager.CrackTasks[i].Charset3;
-                        }
-
-                        if (InfoIndexes.Charset4 > -1)
-                        {
-                            values[InfoIndexes.Charset4] = sCrackTaskManager.CrackTasks[i].Charset4;
-                        }
-
-                        if (InfoIndexes.Hash > -1)
-                        {
-                            values[InfoIndexes.Hash] = sCrackTaskManager.CrackTasks[i].Hash;
-                        }
-
-                        if (InfoIndexes.HashFileName > -1)
-                        {
-                            values[InfoIndexes.HashFileName] = sCrackTaskManager.CrackTasks[i].HashFileName;
-                        }
-
-                        if (InfoIndexes.HashTypeCode > -1)
-                        {
-                            values[InfoIndexes.HashTypeCode] = sCrackTaskManager.CrackTasks[i].HashTypeCode.ToString();
-                        }
-
-                        if (InfoIndexes.HashTypeName > -1)
-                        {
-                            values[InfoIndexes.HashTypeName] = sCrackTaskManager.CrackTasks[i].HashTypeName;
-                        }
-
-                        if (InfoIndexes.Separator > -1)
-                        {
-                            values[InfoIndexes.Separator] = sCrackTaskManager.CrackTasks[i].HashTypeName;
-                        }
-
-                        if (InfoIndexes.MaxLength > -1)
-                        {
-                            values[InfoIndexes.MaxLength] = sCrackTaskManager.CrackTasks[i].MaxLength.ToString();
-                        }
-
-                        if (InfoIndexes.OutputFileName > -1)
-                        {
-                            values[InfoIndexes.OutputFileName] = sCrackTaskManager.CrackTasks[i].OutputFileName;
-                        }
-
-                        if (InfoIndexes.OutputFormatCode > -1)
-                        {
-                            values[InfoIndexes.OutputFormatCode] = sCrackTaskManager.CrackTasks[i].OutputFormatCode.ToString();
-                        }
-
-                        if (InfoIndexes.OutputFormatName > -1)
-                        {
-                            values[InfoIndexes.OutputFormatName] = sCrackTaskManager.CrackTasks[i].OutputFormatName;
-                        }
-
-                        if (InfoIndexes.Plain > -1)
-                        {
-                            values[InfoIndexes.Plain] = sCrackTaskManager.CrackTasks[i].Plain;
-                        }
-
-                        if (InfoIndexes.RetainTemp > -1)
-                        {
-                            values[InfoIndexes.RetainTemp] = sCrackTaskManager.CrackTasks[i].RetainTemp.ToString();
-                        }
-
-                        if (InfoIndexes.SessionId > -1)
-                        {
-                            values[InfoIndexes.SessionId] = sCrackTaskManager.CrackTasks[i].SessionId;
-                        }
-
-                        if (InfoIndexes.StartLength > -1)
-                        {
-                            values[InfoIndexes.StartLength] = sCrackTaskManager.CrackTasks[i].StartLength.ToString();
-                        }
-
-                        if (InfoIndexes.WorkloadFineTuning > -1)
-                        {
-                            values[InfoIndexes.WorkloadFineTuning] = sCrackTaskManager.CrackTasks[i].WorkloadFineTuning.ToString();
-                        }
-
-                        if (InfoIndexes.WorkloadProfileCode > -1)
-                        {
-                            values[InfoIndexes.WorkloadProfileCode] = sCrackTaskManager.CrackTasks[i].WorkloadProfileCode.ToString();
-                        }
-
-                        if (InfoIndexes.WorkloadProfileName > -1)
-                        {
-                            values[InfoIndexes.WorkloadProfileName] = sCrackTaskManager.CrackTasks[i].WorkloadProfileName;
-                        }
-
-                        if (InfoIndexes.WorkloadTuning > -1)
-                        {
-                            values[InfoIndexes.WorkloadTuning] = sCrackTaskManager.CrackTasks[i].WorkloadTuning.ToString();
-                        }
-
-                        if (InfoIndexes.Started > -1)
-                        {
-                            values[InfoIndexes.Started] = sCrackTaskManager.CrackTasks[i].Started.ToString(DateTimeFormat);
-                        }
-
-                        if (InfoIndexes.Finished > -1)
-                        {
-                            values[InfoIndexes.Finished] = sCrackTaskManager.CrackTasks[i].Finished.ToString(DateTimeFormat);
-                        }
-
-                        if (InfoIndexes.Id > -1)
-                        {
-                            values[InfoIndexes.Id] = (i + StartId).ToString();
-                        }
-
-                        ListViewItem Task = new ListViewItem(values);
-                        sListView.Items.Add(Task);
+                        sListView.Items.Add("");
+                        VisualizeTask(i);
                     }
                 }
-                catch(Exception e) 
+                catch (Exception e)
                 {
                     MessageBox.Show(e.ToString());
                 }
