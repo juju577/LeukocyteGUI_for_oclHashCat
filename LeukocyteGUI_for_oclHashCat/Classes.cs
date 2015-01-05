@@ -143,7 +143,7 @@ namespace LeukocyteGUI_for_oclHashCat
 
             return result;
         }
-
+ 
         public class CrackTask
         {
             private string sHashFileName, sHashTypeName, sBruteforceMask, sSeparator,

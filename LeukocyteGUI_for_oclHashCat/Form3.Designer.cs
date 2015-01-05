@@ -55,6 +55,7 @@
             this.buttonAddTask = new System.Windows.Forms.Button();
             this.labelOclHashcat = new System.Windows.Forms.Label();
             this.groupBoxMainSettings = new System.Windows.Forms.GroupBox();
+            this.SelectFolder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBoxGPUStatistics = new System.Windows.Forms.GroupBox();
             this.groupBoxActions = new System.Windows.Forms.GroupBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBoxMainSettings.SuspendLayout();
             this.groupBoxGPUStatistics.SuspendLayout();
             this.groupBoxActions.SuspendLayout();
@@ -74,7 +76,7 @@
             // 
             this.textBoxHashcat.Location = new System.Drawing.Point(82, 22);
             this.textBoxHashcat.Name = "textBoxHashcat";
-            this.textBoxHashcat.Size = new System.Drawing.Size(418, 20);
+            this.textBoxHashcat.Size = new System.Drawing.Size(394, 20);
             this.textBoxHashcat.TabIndex = 8;
             this.textBoxHashcat.Text = "oclHashcat64.exe";
             // 
@@ -107,6 +109,7 @@
             this.listViewTasks.TabIndex = 1;
             this.listViewTasks.UseCompatibleStateImageBehavior = false;
             this.listViewTasks.View = System.Windows.Forms.View.Details;
+            this.listViewTasks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewTasks_KeyDown);
             // 
             // columnHeaderNumber
             // 
@@ -271,6 +274,7 @@
             this.buttonDeleteTask.TabIndex = 10;
             this.buttonDeleteTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDeleteTask.UseVisualStyleBackColor = true;
+            this.buttonDeleteTask.Click += new System.EventHandler(this.buttonDeleteTask_Click);
             // 
             // buttonAddTask
             // 
@@ -295,6 +299,7 @@
             // 
             // groupBoxMainSettings
             // 
+            this.groupBoxMainSettings.Controls.Add(this.SelectFolder);
             this.groupBoxMainSettings.Controls.Add(this.labelOclHashcat);
             this.groupBoxMainSettings.Controls.Add(this.textBoxHashcat);
             this.groupBoxMainSettings.Location = new System.Drawing.Point(11, 12);
@@ -303,6 +308,16 @@
             this.groupBoxMainSettings.TabIndex = 20;
             this.groupBoxMainSettings.TabStop = false;
             this.groupBoxMainSettings.Text = "Main Settings";
+            // 
+            // SelectFolder
+            // 
+            this.SelectFolder.Location = new System.Drawing.Point(477, 21);
+            this.SelectFolder.Name = "SelectFolder";
+            this.SelectFolder.Size = new System.Drawing.Size(34, 22);
+            this.SelectFolder.TabIndex = 20;
+            this.SelectFolder.Text = "...";
+            this.SelectFolder.UseVisualStyleBackColor = true;
+            this.SelectFolder.Click += new System.EventHandler(this.SelectFolder_Click);
             // 
             // label1
             // 
@@ -422,6 +437,10 @@
             this.groupBoxActions.TabStop = false;
             this.groupBoxActions.Text = "Actions";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,5 +500,7 @@
         private System.Windows.Forms.GroupBox groupBoxGPUStatistics;
         private System.Windows.Forms.GroupBox groupBoxActions;
         private System.Windows.Forms.ColumnHeader columnHeaderLength;
+        private System.Windows.Forms.Button SelectFolder;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

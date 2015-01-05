@@ -66,5 +66,30 @@ namespace LeukocyteGUI_for_oclHashCat
                 TaskEditor.ShowDialog(this);
             }
         }
+
+        private void SelectFolder_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "EXE Files (*.exe)|*.exe|All Files (*.*)|*.*";
+            openFileDialog1.FileName = "oclHashcat64.exe";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.CheckFileExists == true) textBoxHashcat.Text = openFileDialog1.FileName;
+        }
+
+        private void buttonDeleteTask_Click(object sender, EventArgs e)
+        {
+            if (listViewTasks.SelectedIndices.Count != 0)
+            {
+                MainCrackTaskManager.DeleteTask(listViewTasks.SelectedIndices[0]);
+                MainCrackTaskManager.Visualizer.VisualizeTasks();
+            }
+        }
+
+        private void listViewTasks_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && listViewTasks.SelectedIndices.Count != 0)
+            {
+                MainCrackTaskManager.DeleteTask(listViewTasks.SelectedIndices[0]);
+                MainCrackTaskManager.Visualizer.VisualizeTasks();
+            }
+        }
     }
 }
