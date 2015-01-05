@@ -66,11 +66,5 @@ namespace LeukocyteGUI_for_oclHashCat
                 TaskEditor.ShowDialog(this);
             }
         }
-
-        private void buttonDeleteTask_Click(object sender, EventArgs e)
-        {
-            MainCrackTaskManager.DeleteTask(listViewTasks.SelectedIndices[0]);
-            MainCrackTaskManager.Visualizer.VisualizeTasks();
-        }
     }
 }

@@ -16,15 +16,3 @@ D:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHas
 E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.ConverterForm.resources
 E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.MainForm.resources
 E:\Projects\Visual Studio 11\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.TaskEditorForm.resources
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\bin\Debug\LeukocyteGUI_for_oclHashCat.exe.config
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.exe
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.pdb
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\bin\Debug\LeukocyteGUI_for_oclHashCat.exe
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\bin\Debug\LeukocyteGUI_for_oclHashCat.pdb
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.csprojResolveAssemblyReference.cache
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.ConverterForm.resources
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.ConvertationStatistics.resources
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.MainForm.resources
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.TaskEditorForm.resources
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.Properties.Resources.resources
-C:\Users\Миша\Documents\Visual Studio 2013\Projects\LeukocyteGUI_for_oclHashCat\LeukocyteGUI_for_oclHashCat\obj\Debug\LeukocyteGUI_for_oclHashCat.csproj.GenerateResource.Cache
