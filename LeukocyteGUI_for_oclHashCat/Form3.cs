@@ -19,14 +19,17 @@ namespace LeukocyteGUI_for_oclHashCat
             InitializeComponent();
             tskManager = new CrackTaskManager();
             tskManager.Visualizer.SetListView(listViewTasks);
+            tskManager.Visualizer.StartId = 1;
+            tskManager.Visualizer.InfoIndexes.Id = 0;
             tskManager.Visualizer.InfoIndexes.HashTypeName = 1;
             tskManager.Visualizer.InfoIndexes.Hash = 2;
             tskManager.Visualizer.InfoIndexes.Plain = 3;
             tskManager.Visualizer.InfoIndexes.HashFileName = 8;
             tskManager.Visualizer.InfoIndexes.OutputFileName = 9;
             tskManager.Visualizer.InfoIndexes.BruteforceMaskDictionary = 10;
+            tskManager.Visualizer.InfoIndexes.Started = 11;
+            tskManager.Visualizer.InfoIndexes.Finished = 12;
             tskManager.Visualizer.InfoIndexes.SessionId = 13;
-            //todo
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)

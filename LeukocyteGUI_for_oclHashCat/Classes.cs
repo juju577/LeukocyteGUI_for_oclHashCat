@@ -382,6 +382,7 @@ namespace LeukocyteGUI_for_oclHashCat
                         if (System.IO.File.Exists(HashFileName))
                         {
                             result = true;
+                            this.sHashFileName = HashFileName;
                         }
                         else
                         {
@@ -391,6 +392,7 @@ namespace LeukocyteGUI_for_oclHashCat
                                     "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                 {
                                     result = true;
+                                    this.sHashFileName = HashFileName;
                                 }
                             }
                         }
@@ -398,12 +400,8 @@ namespace LeukocyteGUI_for_oclHashCat
                     else
                     {
                         result = true;
+                        this.sHash = HashFileName;
                     }
-                }
-
-                if (result)
-                {
-                    this.sHashFileName = HashFileName;
                 }
 
                 return result;   
@@ -757,6 +755,8 @@ namespace LeukocyteGUI_for_oclHashCat
             private ListView sListView;
             private CrackTaskManager sCrackTaskManager;
             public Indexes InfoIndexes;
+            public int StartId = 0;
+            public string DateTimeFormat = "dd-MM-yyyy HH:mm:ss";
 
             public VisualManager(CrackTaskManager tskManager)
             {
@@ -909,6 +909,21 @@ namespace LeukocyteGUI_for_oclHashCat
                             values[InfoIndexes.WorkloadTuning] = sCrackTaskManager.CrackTasks[i].WorkloadTuning.ToString();
                         }
 
+                        if (InfoIndexes.Started > -1)
+                        {
+                            values[InfoIndexes.Started] = sCrackTaskManager.CrackTasks[i].Started.ToString(DateTimeFormat);
+                        }
+
+                        if (InfoIndexes.Finished > -1)
+                        {
+                            values[InfoIndexes.Finished] = sCrackTaskManager.CrackTasks[i].Finished.ToString(DateTimeFormat);
+                        }
+
+                        if (InfoIndexes.Id > -1)
+                        {
+                            values[InfoIndexes.Id] = (i + StartId).ToString();
+                        }
+
                         ListViewItem Task = new ListViewItem(values);
                         sListView.Items.Add(Task);
                     }
@@ -948,7 +963,10 @@ namespace LeukocyteGUI_for_oclHashCat
                     { "RetainTemp", -1 },
                     { "AttackType", -1 },
                     { "Plain", -1 },
-                    { "Hash", -1 }
+                    { "Hash", -1 },
+                    { "Started", -1 },
+                    { "Finished", -1 },
+                    { "Id", -1 }
                 };
 
                 private int sRealLength = 0;
@@ -1302,6 +1320,48 @@ namespace LeukocyteGUI_for_oclHashCat
                     set
                     {
                         sIndexes["Hash"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Started
+                {
+                    get
+                    {
+                        return sIndexes["Started"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Started"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Finished
+                {
+                    get
+                    {
+                        return sIndexes["Finished"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Finished"] = value;
+                        UpdateRealLength();
+                    }
+                }
+
+                public int Id
+                {
+                    get
+                    {
+                        return sIndexes["Id"];
+                    }
+
+                    set
+                    {
+                        sIndexes["Id"] = value;
                         UpdateRealLength();
                     }
                 }
